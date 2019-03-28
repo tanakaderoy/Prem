@@ -20,6 +20,11 @@
 		3FD7D332224D44D600D8FD83 /* MatchNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D331224D44D600D8FD83 /* MatchNetworkAdapter.swift */; };
 		3FD7D334224D4DA000D8FD83 /* MatchDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D333224D4DA000D8FD83 /* MatchDayViewModel.swift */; };
 		3FD7D336224D4F1700D8FD83 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D335224D4F1700D8FD83 /* Util.swift */; };
+		3FD7D339224D514A00D8FD83 /* MatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */; };
+		3FD7D33D224D6CAD00D8FD83 /* TeamRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D33C224D6CAD00D8FD83 /* TeamRoot.swift */; };
+		3FD7D33F224D6D6500D8FD83 /* TeamNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D33E224D6D6500D8FD83 /* TeamNetworkAdapter.swift */; };
+		3FD7D341224D6E3800D8FD83 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D340224D6E3800D8FD83 /* TeamViewModel.swift */; };
+		3FD7D343224D74BE00D8FD83 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD7D342224D74BE00D8FD83 /* SVGKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,12 @@
 		3FD7D331224D44D600D8FD83 /* MatchNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchNetworkAdapter.swift; sourceTree = "<group>"; };
 		3FD7D333224D4DA000D8FD83 /* MatchDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDayViewModel.swift; sourceTree = "<group>"; };
 		3FD7D335224D4F1700D8FD83 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewCell.swift; sourceTree = "<group>"; };
+		3FD7D33C224D6CAD00D8FD83 /* TeamRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRoot.swift; sourceTree = "<group>"; };
+		3FD7D33E224D6D6500D8FD83 /* TeamNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamNetworkAdapter.swift; sourceTree = "<group>"; };
+		3FD7D340224D6E3800D8FD83 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
+		3FD7D342224D74BE00D8FD83 /* SVGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SVGKit.framework; sourceTree = "<group>"; };
+		3FD7D344224D750C00D8FD83 /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD7D343224D74BE00D8FD83 /* SVGKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +68,7 @@
 			children = (
 				3FD7D311224D35A000D8FD83 /* PREM */,
 				3FD7D310224D35A000D8FD83 /* Products */,
+				3FD7D342224D74BE00D8FD83 /* SVGKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +83,7 @@
 		3FD7D311224D35A000D8FD83 /* PREM */ = {
 			isa = PBXGroup;
 			children = (
+				3FD7D337224D50E300D8FD83 /* ViewControllers */,
 				3FD7D326224D369700D8FD83 /* Models */,
 				3FD7D312224D35A000D8FD83 /* AppDelegate.swift */,
 				3FD7D314224D35A000D8FD83 /* ViewController.swift */,
@@ -85,6 +99,23 @@
 		3FD7D326224D369700D8FD83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3FD7D33B224D6C9400D8FD83 /* Teams */,
+				3FD7D33A224D6C8500D8FD83 /* Matches */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FD7D337224D50E300D8FD83 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3FD7D33A224D6C8500D8FD83 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
 				3FD7D324224D369000D8FD83 /* Root.swift */,
 				3FD7D327224D3B2D00D8FD83 /* MatchDay.swift */,
 				3FD7D32B224D417D00D8FD83 /* Score.swift */,
@@ -93,7 +124,18 @@
 				3FD7D331224D44D600D8FD83 /* MatchNetworkAdapter.swift */,
 				3FD7D333224D4DA000D8FD83 /* MatchDayViewModel.swift */,
 			);
-			path = Models;
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		3FD7D33B224D6C9400D8FD83 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				3FD7D33C224D6CAD00D8FD83 /* TeamRoot.swift */,
+				3FD7D344224D750C00D8FD83 /* bridging-header.h */,
+				3FD7D33E224D6D6500D8FD83 /* TeamNetworkAdapter.swift */,
+				3FD7D340224D6E3800D8FD83 /* TeamViewModel.swift */,
+			);
+			path = Teams;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,13 +210,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD7D334224D4DA000D8FD83 /* MatchDayViewModel.swift in Sources */,
+				3FD7D33F224D6D6500D8FD83 /* TeamNetworkAdapter.swift in Sources */,
 				3FD7D315224D35A000D8FD83 /* ViewController.swift in Sources */,
 				3FD7D330224D421F00D8FD83 /* AwayTeam.swift in Sources */,
 				3FD7D32E224D41F400D8FD83 /* HomeTeam.swift in Sources */,
+				3FD7D33D224D6CAD00D8FD83 /* TeamRoot.swift in Sources */,
+				3FD7D339224D514A00D8FD83 /* MatchesTableViewCell.swift in Sources */,
 				3FD7D325224D369000D8FD83 /* Root.swift in Sources */,
 				3FD7D332224D44D600D8FD83 /* MatchNetworkAdapter.swift in Sources */,
 				3FD7D313224D35A000D8FD83 /* AppDelegate.swift in Sources */,
 				3FD7D336224D4F1700D8FD83 /* Util.swift in Sources */,
+				3FD7D341224D6E3800D8FD83 /* TeamViewModel.swift in Sources */,
 				3FD7D328224D3B2D00D8FD83 /* MatchDay.swift in Sources */,
 				3FD7D32C224D417D00D8FD83 /* Score.swift in Sources */,
 			);
@@ -323,6 +369,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PREM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -340,6 +390,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PREM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
