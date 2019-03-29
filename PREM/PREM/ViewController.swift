@@ -57,7 +57,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 
                 let url = URL(string: urlString)
                 let data = try Data(contentsOf: url!)
-                print(" team index\(String(describing: teamIndex))")
+                print("team index\(String(describing: teamIndex))")
                 let anSvgImage = SVGKImage(data: data)
                 cell.homeTeamImage.image = anSvgImage?.uiImage
                 
