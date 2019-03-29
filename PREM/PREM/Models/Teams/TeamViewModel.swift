@@ -24,6 +24,14 @@ class TeamViewModel {
     func reloadData() {
         teamNetworkAdapter.fetchData()
     }
+    func getIndexOfTeamWithId(_ id: Int) -> Int? {
+        if let team = teams{
+            if team.contains(where: {($0.id == id)}){
+                return team.firstIndex(where: {($0.id == id )})
+            }
+        }
+        return nil
+    }
     func teamAtIndex(_ index: Int) -> Teams? {
         if let Team = teams {
             if Team.isValidIndex(index){

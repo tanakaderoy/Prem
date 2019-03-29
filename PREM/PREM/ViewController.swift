@@ -50,19 +50,42 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             cell.awayTeamLabel.text = match.awayTeam.name
             cell.awayTeamScore.text = "\(match.score.fullTime.awayTeam!)"
             cell.homeTeamScore.text = "\(match.score.fullTime.homeTeam!)"
-            if let team = teamViewModel.teamAtIndex(indexPath.row){
+            var teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id ?? 61)
+            if let team = teamViewModel.teamAtIndex(teamIndex!){
             do {
                 let urlString = "\(team.crestUrl)"
+                
                 let url = URL(string: urlString)
                 let data = try Data(contentsOf: url!)
-                print(url)
-                cell.homeTeamImage.image = SVGKImageView(svgkImage: )//UIImage(data: data)
+                print("test")
+                let anSvgImage = SVGKImage(data: data)
+                cell.homeTeamImage.image = anSvgImage?.uiImage
+                
+               print("\(team.id)")
             }
             catch{
                 print(error)
             }
            
         }
+            var awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id ?? 61)
+            if let awayTeam = teamViewModel.teamAtIndex(awayTeamIndex!){
+                do {
+                    let urlString = "\(awayTeam.crestUrl)"
+                    
+                    let url = URL(string: urlString)
+                    let data = try Data(contentsOf: url!)
+                    print("test")
+                    let anSvgImage = SVGKImage(data: data)
+                    cell.awayTeamImage.image = anSvgImage?.uiImage
+                    
+                    print("\(awayTeam.id)")
+                }
+                catch{
+                    print(error)
+                }
+                
+            }
         }
         return cell
     }
