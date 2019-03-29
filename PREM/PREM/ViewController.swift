@@ -57,11 +57,11 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 
                 let url = URL(string: urlString)
                 let data = try Data(contentsOf: url!)
-                print("test")
+                print(" team index\(String(describing: teamIndex))")
                 let anSvgImage = SVGKImage(data: data)
                 cell.homeTeamImage.image = anSvgImage?.uiImage
                 
-               print("\(team.id)")
+               print("team index \(team.id)")
             }
             catch{
                 print(error)
@@ -75,11 +75,11 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                     
                     let url = URL(string: urlString)
                     let data = try Data(contentsOf: url!)
-                    print("test")
+                    print("away team index \(String(describing: awayTeamIndex))")
                     let anSvgImage = SVGKImage(data: data)
                     cell.awayTeamImage.image = anSvgImage?.uiImage
                     
-                    print("\(awayTeam.id)")
+                    print("away team id \(awayTeam.id)")
                 }
                 catch{
                     print(error)

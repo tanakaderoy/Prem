@@ -14,7 +14,7 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: MatchNetworkAdapterDelegate?
     var matches: [MatchDay]?
     
-    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/matches?matchday=31&status=FINISHED")!
+    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/matches?matchday=30&status=FINISHED")!
     
     func fetchData() {
         matches = [MatchDay]()
