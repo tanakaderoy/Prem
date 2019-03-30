@@ -50,8 +50,8 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             cell.awayTeamLabel.text = match.awayTeam.name
             cell.awayTeamScore.text = "\(match.score.fullTime.awayTeam!)"
             cell.homeTeamScore.text = "\(match.score.fullTime.homeTeam!)"
-            var teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id ?? 61)
-            if let team = teamViewModel.teamAtIndex(teamIndex!){
+            let teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id )
+            if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
             do {
                 let urlString = "\(team.crestUrl)"
                 
@@ -68,12 +68,13 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             }
            
         }
-            var awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id ?? 61)
+            let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id )
             if let awayTeam = teamViewModel.teamAtIndex(awayTeamIndex!){
                 do {
                     let urlString = "\(awayTeam.crestUrl)"
                     
                     let url = URL(string: urlString)
+                    
                     let data = try Data(contentsOf: url!)
                     print("away team index \(String(describing: awayTeamIndex))")
                     let anSvgImage = SVGKImage(data: data)

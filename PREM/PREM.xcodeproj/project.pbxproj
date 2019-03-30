@@ -23,7 +23,6 @@
 		3FD7D339224D514A00D8FD83 /* MatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */; };
 		3FD7D33F224D6D6500D8FD83 /* TeamNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D33E224D6D6500D8FD83 /* TeamNetworkAdapter.swift */; };
 		3FD7D341224D6E3800D8FD83 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D340224D6E3800D8FD83 /* TeamViewModel.swift */; };
-		3FD7D343224D74BE00D8FD83 /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD7D342224D74BE00D8FD83 /* SVGKit.framework */; };
 		87C21D14224D814C0094466F /* TeamRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C21D13224D814C0094466F /* TeamRoot.swift */; };
 		87C21D16224D839B0094466F /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C21D15224D839B0094466F /* Teams.swift */; };
 		87C21D17224D846B0094466F /* SVGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD7D342224D74BE00D8FD83 /* SVGKit.framework */; };
@@ -79,7 +78,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C21D17224D846B0094466F /* SVGKit.framework in Frameworks */,
-				3FD7D343224D74BE00D8FD83 /* SVGKit.framework in Frameworks */,
 				9E09590A259D22CB98047BC4 /* Pods_PREM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +210,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Tanaka;
 				TargetAttributes = {
 					3FD7D30E224D35A000D8FD83 = {
