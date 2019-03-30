@@ -61,7 +61,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 let anSvgImage = SVGKImage(data: data)
                 cell.homeTeamImage.image = anSvgImage?.uiImage
                 
-               print("team index \(team.id)")
+                print("team index: \(team.id)")
             }
             catch{
                 print(error)
