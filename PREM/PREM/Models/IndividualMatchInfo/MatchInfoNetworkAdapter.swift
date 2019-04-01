@@ -13,6 +13,10 @@ protocol MatchInfoNetworkAdapterDelegate {
 class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: MatchInfoNetworkAdapterDelegate?
     var matchInfo: [MatchInfoRoot]?
+    var id: Int
+    init(id: Int) {
+        self.id = id
+    }
     
     private let endpoint =  URL(string: "https://api.football-data.org/v2/matches/233339")!
     

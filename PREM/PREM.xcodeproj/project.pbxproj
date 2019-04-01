@@ -105,6 +105,14 @@
 			path = IndividualMatchInfo;
 			sourceTree = "<group>";
 		};
+		3F1DC57D2252B42700F02FAF /* TableCellController */ = {
+			isa = PBXGroup;
+			children = (
+				3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */,
+			);
+			path = TableCellController;
+			sourceTree = "<group>";
+		};
 		3FC3730E2A520EC4C935BE3F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +144,10 @@
 		3FD7D311224D35A000D8FD83 /* PREM */ = {
 			isa = PBXGroup;
 			children = (
+				3F1DC57D2252B42700F02FAF /* TableCellController */,
 				3FD7D337224D50E300D8FD83 /* ViewControllers */,
 				3FD7D326224D369700D8FD83 /* Models */,
 				3FD7D312224D35A000D8FD83 /* AppDelegate.swift */,
-				3FD7D314224D35A000D8FD83 /* ViewController.swift */,
 				3FD7D316224D35A000D8FD83 /* Main.storyboard */,
 				3FD7D319224D35A100D8FD83 /* Assets.xcassets */,
 				3F1DC5722252A3C500F02FAF /* che.png */,
@@ -164,7 +172,7 @@
 		3FD7D337224D50E300D8FD83 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */,
+				3FD7D314224D35A000D8FD83 /* ViewController.swift */,
 				3F1DC57B2252AEEF00F02FAF /* IndividualMatchInfoViewController.swift */,
 			);
 			path = ViewControllers;

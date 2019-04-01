@@ -96,19 +96,19 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let vc = segue.destination as? IndividualMatchInfoViewController {
             
             if let row = tableView.indexPathForSelectedRow?.row {
-                if let id = StateViewModel.instance.stateForIndex(row) {
-                    vc.state = state.abbreviation
+                if let matchInfo = matchDayViewModel.matchAtIndex(row){
+                    vc.id = matchInfo.id
                     
                 }
             }
         }
-    } */
+    } 
     
     
     

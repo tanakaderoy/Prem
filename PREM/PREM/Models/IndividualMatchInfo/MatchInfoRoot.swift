@@ -37,7 +37,7 @@ class HeadToHead: Codable{
 
 class IndividualMatch:Codable {
     var id: Int
-    var utcDate: Date
+    var utcDate: String
     var status: String
     var venue: String
     var matchday: Int

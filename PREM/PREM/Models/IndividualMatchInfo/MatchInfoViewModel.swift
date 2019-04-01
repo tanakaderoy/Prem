@@ -14,8 +14,8 @@ class MatchInfoViewModel {
     var delegate: MatchInfoViewModelDelegate?
     private var matchInfo: [MatchInfoRoot]?
     private var matchInfoNetworkAdapter: MatchInfoNetworkAdapter!
-    init(){
-        matchInfoNetworkAdapter = MatchInfoNetworkAdapter()
+    init(id: Int){
+        matchInfoNetworkAdapter = MatchInfoNetworkAdapter(id: id)
         matchInfoNetworkAdapter.delegate = self
     }
     var count: Int{
@@ -24,16 +24,16 @@ class MatchInfoViewModel {
     func reloadData() {
         matchInfoNetworkAdapter.fetchData()
     }
-    /*
+    
     func getIndexOfMatchInfoWithId(_ id: Int) -> Int? {
         if let matchInformation = matchInfo{
-            if matchInformation.contains(where: {($0.id == id)}){
-                return matchInformation.firstIndex(where: {($0.id == id )})
+            if matchInformation.contains(where: {($0.match.id == id)}){
+                return matchInformation.firstIndex(where: {($0.match.id == id )})
             }
         }
         return nil
-    }*/
-    func MatchInfoAtIndex(_ index: Int) -> MatchInfoRoot? {
+    }
+    func matchInfoAtIndex(_ index: Int) -> MatchInfoRoot? {
         if let MatchInfo = matchInfo {
             if MatchInfo.isValidIndex(index){
                 return MatchInfo[index]
