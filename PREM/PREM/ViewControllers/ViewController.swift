@@ -69,7 +69,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
            
         }
             let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id )
-            if let awayTeam = teamViewModel.teamAtIndex(awayTeamIndex!){
+            if let awayTeam = teamViewModel.teamAtIndex(awayTeamIndex ?? 999){
                 do {
                     let urlString = "\(awayTeam.crestUrl)"
                     
