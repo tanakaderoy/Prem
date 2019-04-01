@@ -1,23 +1,23 @@
 //
-//  MatchNetworkAdapter.swift
+//  MatchInfoNetworkAdapter.swift
 //  PREM
 //
-//  Created by Student on 3/28/19.
+//  Created by Student on 4/1/19.
 //  Copyright © 2019 Tanaka. All rights reserved.
 //
 
 import Foundation
-protocol MatchNetworkAdapterDelegate {
-    func matchesUpdated()
+protocol MatchInfoNetworkAdapterDelegate {
+    func matchInfoUpdated()
 }
-class MatchNetworkAdapter: NSObject, URLSessionDelegate {
-    var delegate: MatchNetworkAdapterDelegate?
-    var matches: [MatchDay]?
+class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
+    var delegate: MatchInfoNetworkAdapterDelegate?
+    var matchInfo: [MatchInfoRoot]?
     
-    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/matches?matchday=32&status=FINISHED")!
+    private let endpoint =  URL(string: "https://api.football-data.org/v2/matches/233339")!
     
     func fetchData() {
-        matches = [MatchDay]()
+        matchInfo = [MatchInfoRoot]()
         let session = URLSession.init(configuration: .default, delegate: self, delegateQueue: .main)
         var request = URLRequest(url: endpoint)
         request.setValue("ab93dfbf8a73486097b91ac7ba77c9f8", forHTTPHeaderField: "X-Auth-Token")
@@ -36,24 +36,23 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
             
             if let data = data {
                 print( String(data: data, encoding: .utf8)!)
-
+                
                 
                 let jsonDecoder = JSONDecoder()
                 do{
-                    let matchesPage = try jsonDecoder.decode(Root.self, from: data)
-                    if matchesPage.matches.count > 0{
-                    
-                        self.matches?.append(contentsOf: matchesPage.matches)
-                        self.delegate?.matchesUpdated()
-                    }
+                    let matchInfoRoot = try jsonDecoder.decode(MatchInfoRoot.self, from: data)
                         
+                    self.matchInfo?.append(matchInfoRoot)
+                        self.delegate?.matchInfoUpdated()
+                    
+                    
                     
                     
                 }catch let error {
                     print("error with JSON decoding: \(error)")
                 }
-              
-            
+                
+                
             }
         }
         task.resume()

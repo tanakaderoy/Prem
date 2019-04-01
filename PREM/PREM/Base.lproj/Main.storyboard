@@ -121,6 +121,7 @@
                                             <outlet property="homeTeamImage" destination="NVr-hx-7c5" id="Vrv-OM-911"/>
                                             <outlet property="homeTeamLabel" destination="iut-aO-q0v" id="Kwg-3A-RoN"/>
                                             <outlet property="homeTeamScore" destination="fPt-Yb-Rrk" id="Pbw-Q5-iM9"/>
+                                            <segue destination="Ea4-Sv-C1Y" kind="show" id="eBg-qQ-wO2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -146,6 +147,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="133.00492610837438"/>
+        </scene>
+        <!--Individual Match Info View Controller-->
+        <scene sceneID="9dx-NY-NTj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qnj-oY-cXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Ea4-Sv-C1Y" customClass="IndividualMatchInfoViewController" customModule="PREM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Isx-fC-JpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bxq-8J-RmG"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="926" y="133"/>
         </scene>
     </scenes>
 </document>

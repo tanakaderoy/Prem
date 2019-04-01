@@ -77,8 +77,13 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                     
                     let data = try Data(contentsOf: url!)
                     print("away team index \(String(describing: awayTeamIndex))")
+                    if awayTeam.id == 61{
+                        cell.awayTeamImage.image = UIImage(named:  "che.png")
+                    }else{
+                    
                     let anSvgImage = SVGKImage(data: data)
                     cell.awayTeamImage.image = anSvgImage?.uiImage
+                    }
                     
                     print("away team id \(awayTeam.id)")
                 }
@@ -90,6 +95,22 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         }
         return cell
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? IndividualMatchInfoViewController {
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+                if let id = StateViewModel.instance.stateForIndex(row) {
+                    vc.state = state.abbreviation
+                    
+                }
+            }
+        }
+    } */
+    
+    
     
     
 }//end class

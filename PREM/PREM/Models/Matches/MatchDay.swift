@@ -11,6 +11,7 @@ import Foundation
 
 class MatchDay: Codable {
     
+    var id: Int
     var utcDate: String
     var status: String//Status
     var matchday: Int?
@@ -20,6 +21,7 @@ class MatchDay: Codable {
     
     enum CodingKeys: String, CodingKey {
         
+        case id
         case utcDate
         case status
         case matchday
