@@ -11,18 +11,30 @@ protocol MatchInfoNetworkAdapterDelegate {
     func matchInfoUpdated()
 }
 class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
+    
     var delegate: MatchInfoNetworkAdapterDelegate?
     var matchInfo: [MatchInfoRoot]?
     var id: Int
+    
     init(id: Int) {
         self.id = id
     }
     
-    private let endpoint =  URL(string: "https://api.football-data.org/v2/matches/233339")!
+    var url = "https://api.football-data.org/v2/matches/%d"
+    
+    private var endpoint: URL? {
+        return  URL(string: String(format: url, self.id))
+    }
     
     func fetchData() {
         matchInfo = [MatchInfoRoot]()
         let session = URLSession.init(configuration: .default, delegate: self, delegateQueue: .main)
+        
+        guard let endpoint = self.endpoint else {
+            print("url creating failed")
+            return
+        }
+        
         var request = URLRequest(url: endpoint)
         request.setValue("ab93dfbf8a73486097b91ac7ba77c9f8", forHTTPHeaderField: "X-Auth-Token")
         let task = session.dataTask(with: request){ (data, response, error)  in
@@ -34,7 +46,7 @@ class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
             
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Got an error back from the server - do someting")
+                print("Got an error back from the server - do anything")
                 return
             }
             
