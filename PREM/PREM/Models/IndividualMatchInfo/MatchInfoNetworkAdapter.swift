@@ -11,9 +11,9 @@ protocol MatchInfoNetworkAdapterDelegate {
     func matchInfoUpdated()
 }
 class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
-    
+    var matchInfo: MatchInfoRoot?
     var delegate: MatchInfoNetworkAdapterDelegate?
-    var matchInfo: [MatchInfoRoot]?
+    
     var id: Int
     
     init(id: Int) {
@@ -27,7 +27,7 @@ class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
     }
     
     func fetchData() {
-        matchInfo = [MatchInfoRoot]()
+        //matchInfo = [MatchInfoRoot]()
         let session = URLSession.init(configuration: .default, delegate: self, delegateQueue: .main)
         
         guard let endpoint = self.endpoint else {
@@ -56,11 +56,13 @@ class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
                 
                 let jsonDecoder = JSONDecoder()
                 do{
-                    let matchInfoRoot = try jsonDecoder.decode(MatchInfoRoot.self, from: data)
+                    self.matchInfo = try jsonDecoder.decode(MatchInfoRoot.self, from: data)
+                    print("\(String(describing: self.matchInfo?.match.id))")
                         
-                    self.matchInfo?.append(matchInfoRoot)
+//                    self.matchInfo?.append(matchInfoRoot)
+                    DispatchQueue.main.async {
                         self.delegate?.matchInfoUpdated()
-                    
+                    }
                     
                     
                     

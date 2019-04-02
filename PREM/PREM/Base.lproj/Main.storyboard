@@ -168,37 +168,68 @@
         <!--Individual Match Info View Controller-->
         <scene sceneID="9dx-NY-NTj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qnj-oY-cXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Ea4-Sv-C1Y" customClass="IndividualMatchInfoViewController" customModule="PREM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Isx-fC-JpJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeTeam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbY-tm-3Sk">
-                                <rect key="frame" x="32" y="149" width="85.666666666666671" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeTeam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbY-tm-3Sk">
+                                <rect key="frame" x="32" y="149" width="84" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="AwayTeam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y4-uB-O4N">
-                                <rect key="frame" x="253" y="149" width="80.333333333333314" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v3u-MV-mCX">
+                                <rect key="frame" x="44" y="226" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AFL-Ly-ocm"/>
+                                    <constraint firstAttribute="width" secondItem="v3u-MV-mCX" secondAttribute="height" multiplier="1:1" id="UlP-gZ-gbN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-iU-EOA">
+                                <rect key="frame" x="273" y="226" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ALQ-iU-EOA" secondAttribute="height" multiplier="1:1" id="j9L-sp-Zrk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="AwayTeam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y4-uB-O4N">
+                                <rect key="frame" x="273" y="149" width="60" height="69"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bxq-8J-RmG" firstAttribute="bottom" secondItem="v3u-MV-mCX" secondAttribute="bottom" constant="492" id="2jY-M9-ayH"/>
+                            <constraint firstItem="ALQ-iU-EOA" firstAttribute="top" secondItem="7y4-uB-O4N" secondAttribute="bottom" constant="8" symbolic="YES" id="3AT-yW-8xo"/>
+                            <constraint firstItem="ALQ-iU-EOA" firstAttribute="trailing" secondItem="7y4-uB-O4N" secondAttribute="trailing" id="6XQ-aM-nc5"/>
+                            <constraint firstItem="ALQ-iU-EOA" firstAttribute="centerX" secondItem="7y4-uB-O4N" secondAttribute="centerX" id="6gc-2w-qTP"/>
+                            <constraint firstItem="v3u-MV-mCX" firstAttribute="leading" secondItem="Bxq-8J-RmG" secondAttribute="leading" constant="44" id="EAL-aM-S0g"/>
+                            <constraint firstItem="Bxq-8J-RmG" firstAttribute="trailing" secondItem="ALQ-iU-EOA" secondAttribute="trailing" constant="42" id="FBG-eD-n4s"/>
+                            <constraint firstItem="kbY-tm-3Sk" firstAttribute="leading" secondItem="Bxq-8J-RmG" secondAttribute="leading" constant="32" id="JtN-d5-uve"/>
+                            <constraint firstItem="v3u-MV-mCX" firstAttribute="top" secondItem="kbY-tm-3Sk" secondAttribute="bottom" constant="8" symbolic="YES" id="KZi-qu-LCh"/>
+                            <constraint firstItem="v3u-MV-mCX" firstAttribute="centerX" secondItem="kbY-tm-3Sk" secondAttribute="centerX" id="VTF-g1-RjL"/>
+                            <constraint firstItem="v3u-MV-mCX" firstAttribute="width" secondItem="v3u-MV-mCX" secondAttribute="height" multiplier="1:1" id="aHA-M8-gkI"/>
+                            <constraint firstItem="ALQ-iU-EOA" firstAttribute="width" secondItem="ALQ-iU-EOA" secondAttribute="height" multiplier="1:1" id="gP5-Pw-ZuU"/>
+                            <constraint firstItem="kbY-tm-3Sk" firstAttribute="firstBaseline" secondItem="7y4-uB-O4N" secondAttribute="firstBaseline" id="gva-Dc-tea"/>
+                            <constraint firstItem="v3u-MV-mCX" firstAttribute="top" secondItem="ALQ-iU-EOA" secondAttribute="top" id="leY-On-2BG"/>
+                            <constraint firstItem="kbY-tm-3Sk" firstAttribute="top" secondItem="Bxq-8J-RmG" secondAttribute="top" constant="61" id="mRR-jW-qJf"/>
+                            <constraint firstItem="v3u-MV-mCX" firstAttribute="bottom" secondItem="ALQ-iU-EOA" secondAttribute="bottom" id="ntv-HD-Xfz"/>
+                            <constraint firstItem="7y4-uB-O4N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kbY-tm-3Sk" secondAttribute="trailing" constant="8" symbolic="YES" id="pHf-dC-fmq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bxq-8J-RmG"/>
                     </view>
                     <connections>
+                        <outlet property="awayTeamImageView" destination="ALQ-iU-EOA" id="ZPl-iR-aH0"/>
                         <outlet property="awayTeamLabel" destination="7y4-uB-O4N" id="6p6-hW-whP"/>
+                        <outlet property="homeTeamImageView" destination="v3u-MV-mCX" id="WT7-n0-bp1"/>
                         <outlet property="homeTeamLabel" destination="kbY-tm-3Sk" id="FXa-U9-AHm"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qnj-oY-cXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="133"/>
+            <point key="canvasLocation" x="925.60000000000002" y="132.26600985221674"/>
         </scene>
     </scenes>
 </document>
