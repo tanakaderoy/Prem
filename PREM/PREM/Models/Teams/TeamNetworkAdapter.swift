@@ -30,9 +30,10 @@ class TeamNetworkAdapter: NSObject, URLSessionDelegate {
             
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Got an error back from the server - do someting")
+                print("Team Network adpterGot an error back from the server - do someting")
                 return
             }
+            
             
             if let data = data {
                 print( String(data: data, encoding: .utf8)!)

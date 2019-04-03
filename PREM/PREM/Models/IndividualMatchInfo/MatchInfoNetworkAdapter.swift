@@ -46,7 +46,7 @@ class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
             
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Got an error back from the server - do anything")
+                print("Match info Got an error back from the server - do anything )")
                 return
             }
             

@@ -18,6 +18,8 @@ class MatchDayViewModel {
         matchNetworkAdapter = MatchNetworkAdapter()
         matchNetworkAdapter.delegate = self
     }
+    var matchDayNumber = 0
+    
     var count: Int{
         return matchday?.count != nil ? matchday!.count: 10
     }
@@ -37,6 +39,8 @@ class MatchDayViewModel {
 extension MatchDayViewModel: MatchNetworkAdapterDelegate{
     func matchesUpdated() {
         self.matchday = matchNetworkAdapter.matches
+        let firstMatch = matchNetworkAdapter.matches?.first
+        self.matchDayNumber = firstMatch?.matchday ?? 0
         delegate?.matchesUpdated()
     }
 }

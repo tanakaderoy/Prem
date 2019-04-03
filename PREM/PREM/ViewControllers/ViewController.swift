@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     var matchDayViewModel: MatchDayViewModel!
     var teamViewModel: TeamViewModel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var matchDayLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         matchDayViewModel = MatchDayViewModel()
         matchDayViewModel.delegate = self
         teamViewModel = TeamViewModel()
+        
         
         
         
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
         matchDayViewModel.reloadData()
         
         teamViewModel.reloadData()
+        
         
     }
 
@@ -45,6 +48,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             preconditionFailure("Can't find 'schoolCell'")
         }
         if let match = matchDayViewModel.matchAtIndex(indexPath.row){
+            matchDayLabel.text = "MatchDay: \(matchDayViewModel.matchDayNumber)"
             print("\(match.homeTeam.name) \(match.score.fullTime.homeTeam!) vs \(match.score.fullTime.awayTeam!) \(match.awayTeam.name)")
             cell.homeTeamLabel.text = match.homeTeam.name
             cell.awayTeamLabel.text = match.awayTeam.name
