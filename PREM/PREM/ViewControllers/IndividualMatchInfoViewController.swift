@@ -16,7 +16,11 @@ class IndividualMatchInfoViewController: UIViewController {
     @IBOutlet weak var homeTeamLabel: UILabel!
     @IBOutlet weak var homeTeamImageView: UIImageView!
     @IBOutlet weak var awayTeamImageView: UIImageView!
+    @IBOutlet weak var awayTeamScore: UILabel!
     
+    @IBOutlet weak var refereeLabel: UILabel!
+    @IBOutlet weak var venueLabel: UILabel!
+    @IBOutlet weak var homeTeamScore: UILabel!
     @IBOutlet weak var awayTeamLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,13 @@ class IndividualMatchInfoViewController: UIViewController {
         let match = matchInfoViewModel.matchInfo?.match
         homeTeamLabel.text = match?.homeTeam.name
         awayTeamLabel.text = match?.awayTeam.name
+        let referee = match?.referees[0]
+        print("\(String(describing: referee?.name))")
+        refereeLabel.text = referee?.name
+        homeTeamScore.text = "\(match?.score.fullTime.homeTeam ?? 9999)"
+        awayTeamScore.text = "\(match?.score.fullTime.awayTeam ?? 9999)"
+        venueLabel.text = match?.venue
+        
         let teamIndex  = teamViewModel.getIndexOfTeamWithId(match?.homeTeam.id ?? 999 )
         if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
             let urlString = "\(team.crestUrl)"
@@ -113,8 +124,11 @@ extension IndividualMatchInfoViewController: MatchInfoViewModelDelegate {
 //        if let singleMatch = matchInfoViewModel.matchInfoAtIndex(matchIndex ?? 999) {
 //            homeTeamLabel.text = "\(singleMatch.match.homeTeam.name)"
 //        }
+        DispatchQueue.main.async {
+             self.updateUI()
+        }
         
-        updateUI()
+       
         
     }
     
