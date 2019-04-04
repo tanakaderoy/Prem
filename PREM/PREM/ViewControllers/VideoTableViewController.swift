@@ -5,7 +5,7 @@
 //  Created by Student on 4/4/19.
 //  Copyright © 2019 Tanaka. All rights reserved.
 //
-
+//https://github.com/ashish0309/AutoVideoPlayer
 import UIKit
 import AVKit
 import AVFoundation
