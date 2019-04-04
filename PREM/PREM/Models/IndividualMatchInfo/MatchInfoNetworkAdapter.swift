@@ -58,8 +58,8 @@ class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
                 do{
                     self.matchInfo = try jsonDecoder.decode(MatchInfoRoot.self, from: data)
                     print("\(String(describing: self.matchInfo?.match.id))")
-                        
-//                    self.matchInfo?.append(matchInfoRoot)
+                    
+                    //                    self.matchInfo?.append(matchInfoRoot)
                     DispatchQueue.main.async {
                         self.delegate?.matchInfoUpdated()
                     }

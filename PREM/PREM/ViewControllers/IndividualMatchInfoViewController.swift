@@ -58,22 +58,22 @@ class IndividualMatchInfoViewController: UIViewController {
             let url = URL(string: urlString)
             let anSvgImage = SVGKImage(contentsOf: url)
             homeTeamImageView.image = anSvgImage?.uiImage
-          
             
-//            do {
-//                let urlString = "\(team.crestUrl)"
-//
-//                let url = URL(string: urlString)
-//                let data = try Data(contentsOf: url!)
-//                print("team index\(String(describing: teamIndex))")
-//                let anSvgImage = SVGKImage(data: data)
-//                homeTeamImageView.image = anSvgImage?.uiImage
-//
-//                //print("team index: \(team.id)")
-//            }
-//            catch{
-//                print(error)
-//            }
+            
+            //            do {
+            //                let urlString = "\(team.crestUrl)"
+            //
+            //                let url = URL(string: urlString)
+            //                let data = try Data(contentsOf: url!)
+            //                print("team index\(String(describing: teamIndex))")
+            //                let anSvgImage = SVGKImage(data: data)
+            //                homeTeamImageView.image = anSvgImage?.uiImage
+            //
+            //                //print("team index: \(team.id)")
+            //            }
+            //            catch{
+            //                print(error)
+            //            }
             
         }
         let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match?.awayTeam.id ?? 999 )
@@ -121,14 +121,14 @@ extension IndividualMatchInfoViewController: MatchInfoViewModelDelegate {
         //print(self.matchInfoViewModel.homeTeamName)
         //let matchIndex = matchInfoViewModel.getIndexOfMatchInfoWithId(id!)
         //print("\(String(describing: matchIndex))")
-//        if let singleMatch = matchInfoViewModel.matchInfoAtIndex(matchIndex ?? 999) {
-//            homeTeamLabel.text = "\(singleMatch.match.homeTeam.name)"
-//        }
+        //        if let singleMatch = matchInfoViewModel.matchInfoAtIndex(matchIndex ?? 999) {
+        //            homeTeamLabel.text = "\(singleMatch.match.homeTeam.name)"
+        //        }
         DispatchQueue.main.async {
-             self.updateUI()
+            self.updateUI()
         }
         
-       
+        
         
     }
     

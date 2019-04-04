@@ -36,24 +36,24 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
             
             if let data = data {
                 print( String(data: data, encoding: .utf8)!)
-
+                
                 
                 let jsonDecoder = JSONDecoder()
                 do{
                     let matchesPage = try jsonDecoder.decode(Root.self, from: data)
                     if matchesPage.matches.count > 0{
-                    
+                        
                         self.matches?.append(contentsOf: matchesPage.matches)
                         self.delegate?.matchesUpdated()
                     }
-                        
+                    
                     
                     
                 }catch let error {
                     print("error with JSON decoding: \(error)")
                 }
-              
-            
+                
+                
             }
         }
         task.resume()
