@@ -14,6 +14,7 @@ class MatchDayViewModel {
     var delegate: MatchDayViewModelDelegate?
     private var matchday: [MatchDay]?
     private var matchNetworkAdapter: MatchNetworkAdapter!
+    var day: Int?
     init(){
         matchNetworkAdapter = MatchNetworkAdapter()
         matchNetworkAdapter.delegate = self
@@ -25,6 +26,9 @@ class MatchDayViewModel {
     }
     func reloadData() {
         matchNetworkAdapter.fetchData()
+    }
+    func reloadMatchDayData() {
+        matchNetworkAdapter.fetchDataWithMatchDay(day: day!)
     }
     func matchAtIndex(_ index: Int) -> MatchDay? {
         if let match = matchday {
@@ -38,6 +42,7 @@ class MatchDayViewModel {
 
 extension MatchDayViewModel: MatchNetworkAdapterDelegate{
     func matchesUpdated() {
+        self.day = matchNetworkAdapter.day
         self.matchday = matchNetworkAdapter.matches
         let firstMatch = matchNetworkAdapter.matches?.first
         self.matchDayNumber = firstMatch?.matchday ?? 0
