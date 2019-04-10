@@ -12,12 +12,12 @@ protocol StandingsNetworkAdapterDelegate {
 }
 class StandingsNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: StandingsNetworkAdapterDelegate?
-    var table: [Standings]?
+    var table: [Table]?
     
     private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/standings")!
     
     func fetchData() {
-        table = [Standings]()
+        table = [Table]()
         let session = URLSession.init(configuration: .default, delegate: self, delegateQueue: .main)
         var request = URLRequest(url: endpoint)
         request.setValue("ab93dfbf8a73486097b91ac7ba77c9f8", forHTTPHeaderField: "X-Auth-Token")
@@ -41,12 +41,12 @@ class StandingsNetworkAdapter: NSObject, URLSessionDelegate {
                 
                 let jsonDecoder = JSONDecoder()
                 do{
-                    let standingsRoot = try jsonDecoder.decode(StandingsRoot.self, from: data)
-                    if standingsRoot.standings.count > 0{
-                        
-                        self.table?.append(contentsOf: standingsRoot.standings)
+                    let standings = try jsonDecoder.decode(Table.self, from: data)
+                   
+                       
+                    self.table?.append(standings)
                         self.delegate?.standingsUpdated()
-                    }
+                   
                     
                     
                     

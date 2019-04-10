@@ -15,6 +15,8 @@
 		3F1E0F37225680AE0093A4E1 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E0F36225680AE0093A4E1 /* VideoTableViewController.swift */; };
 		3F1E0F392256815B0093A4E1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E0F382256815B0093A4E1 /* PlayerView.swift */; };
 		3F1E0F3B2256820E0093A4E1 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E0F3A2256820E0093A4E1 /* VideoTableViewCell.swift */; };
+		3F3F61E8225E8E5F00F0F0A3 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */; };
+		3F3F61EA225E90FF00F0F0A3 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */; };
 		3F792BDB225D4535009CEFEF /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */; };
 		3FA85261225D12A10045920A /* StandingsRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA85260225D12A10045920A /* StandingsRoot.swift */; };
 		3FA85263225D15110045920A /* StandingsNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA85262225D15110045920A /* StandingsNetworkAdapter.swift */; };
@@ -66,6 +68,8 @@
 		3F1E0F36225680AE0093A4E1 /* VideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		3F1E0F382256815B0093A4E1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3F1E0F3A2256820E0093A4E1 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
+		3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		3FA85260225D12A10045920A /* StandingsRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRoot.swift; sourceTree = "<group>"; };
 		3FA85262225D15110045920A /* StandingsNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsNetworkAdapter.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			children = (
 				3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */,
 				3F1E0F3A2256820E0093A4E1 /* VideoTableViewCell.swift */,
+				3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */,
 			);
 			path = TableCellController;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				3F1DC57B2252AEEF00F02FAF /* IndividualMatchInfoViewController.swift */,
 				3F1E0F36225680AE0093A4E1 /* VideoTableViewController.swift */,
 				3F1E0F382256815B0093A4E1 /* PlayerView.swift */,
+				3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 			files = (
 				3FD7D334224D4DA000D8FD83 /* MatchDayViewModel.swift in Sources */,
 				3FD7D33F224D6D6500D8FD83 /* TeamNetworkAdapter.swift in Sources */,
+				3F3F61EA225E90FF00F0F0A3 /* StandingsViewController.swift in Sources */,
 				3F1DC5782252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift in Sources */,
 				3F1E0F3B2256820E0093A4E1 /* VideoTableViewCell.swift in Sources */,
 				3FD7D315224D35A000D8FD83 /* ViewController.swift in Sources */,
@@ -368,6 +375,7 @@
 				3FA85263225D15110045920A /* StandingsNetworkAdapter.swift in Sources */,
 				3FD7D330224D421F00D8FD83 /* AwayTeam.swift in Sources */,
 				3FD7D32E224D41F400D8FD83 /* HomeTeam.swift in Sources */,
+				3F3F61E8225E8E5F00F0F0A3 /* StandingsTableViewCell.swift in Sources */,
 				3F1E0F37225680AE0093A4E1 /* VideoTableViewController.swift in Sources */,
 				3FD7D339224D514A00D8FD83 /* MatchesTableViewCell.swift in Sources */,
 				3F1E0F392256815B0093A4E1 /* PlayerView.swift in Sources */,

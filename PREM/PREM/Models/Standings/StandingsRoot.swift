@@ -13,20 +13,23 @@ class StandingsRoot: Codable {
 }
 
 class Standings: Codable {
-    let table: [Table]
+    let table: [Table]?
+    enum CodingKeys: String, CodingKey {
+        case table = "table"
+    }
 }
 class Table: Codable {
-    let position:Int
-    let team: TableTeam
+    let position:Int?
+    let team: TableTeam?
     struct TableTeam: Codable {
         let id: Int
         let name: String
         let crestUrl: URL
     }
-    let playedGames: Int
-    let won: Int
-    let draw: Int
-    let lost: Int
-    let points: Int
-    let goalDifference: Int
+    let playedGames: Int?
+    let won: Int?
+    let draw: Int?
+    let lost: Int?
+    let points: Int?
+    let goalDifference: Int?
 }

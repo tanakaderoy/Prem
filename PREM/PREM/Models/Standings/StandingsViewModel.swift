@@ -12,7 +12,7 @@ protocol StandingsViewModelDelegate {
 }
 class StandingsViewModel {
     var delegate: StandingsViewModelDelegate?
-    private var standings: [Standings]?
+   var standings: [Table]?
     private var standingsNetworkAdapter: StandingsNetworkAdapter!
     
     init(){
@@ -28,7 +28,7 @@ class StandingsViewModel {
         standingsNetworkAdapter.fetchData()
     }
     
-    func standingsAtIndex(_ index: Int) -> Standings? {
+    func standingsAtIndex(_ index: Int) -> Table? {
         if let standings = standings {
             if standings.isValidIndex(index){
                 return standings[index]

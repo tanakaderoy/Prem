@@ -12,7 +12,7 @@ import SVGKit
 class ViewController: UIViewController {
     var matchDayViewModel: MatchDayViewModel!
     var teamViewModel: TeamViewModel!
-    var standingsViewModel: StandingsViewModel!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var matchDayLabel: UILabel!
     @IBOutlet weak var matchDayTextField: UITextField!
@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         createDayPicker()
         createToolbar()
         matchDayViewModel = MatchDayViewModel()
-        standingsViewModel = StandingsViewModel()
         matchDayViewModel.delegate = self
         teamViewModel = TeamViewModel()
       
@@ -45,7 +44,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         matchDayViewModel.reloadData()
-        standingsViewModel.reloadData()
         
         teamViewModel.reloadData()
         
@@ -105,12 +103,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "matchesCell") as? MatchesTableViewCell else {
             preconditionFailure("Can't find 'schoolCell'")
         }
-        if let standing = standingsViewModel.standingsAtIndex(indexPath.row
-            ){
-            let table = standing.table
-            print("testing 12\(table[0].position)")
-            
-        }
+        
         
         if let match = matchDayViewModel.matchAtIndex(indexPath.row){
             matchDayLabel.text = "MatchDay: \(matchDayViewModel.matchDayNumber)"
