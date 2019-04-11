@@ -48,6 +48,7 @@ class StandingsNetworkAdapter: NSObject, URLSessionDelegate {
                             print("\(table.team.name)")
                         }
                     }
+                    self.delegate?.standingsUpdated()
                     //self.standing?.append(contentsOf: standings.table)
                     
                    

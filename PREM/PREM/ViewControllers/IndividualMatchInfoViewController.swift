@@ -55,6 +55,7 @@ class IndividualMatchInfoViewController: UIViewController {
         let teamIndex  = teamViewModel.getIndexOfTeamWithId(match?.homeTeam.id ?? 999 )
         if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
             let urlString = "\(team.crestUrl)"
+            
             let url = URL(string: urlString)
             let anSvgImage = SVGKImage(contentsOf: url)
             homeTeamImageView.image = anSvgImage?.uiImage

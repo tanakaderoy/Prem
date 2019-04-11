@@ -35,11 +35,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func goButtonTouched(_ sender: UIButton) {
-        matchDayViewModel.day = Int(selectedDay!)
+        matchDayViewModel.day = Int(selectedDay)
+        self.matchesUpdated()
         matchDayViewModel.reloadMatchDayData()
     }
-    let days = [Int](1...32)
-    var selectedDay: String?
+    let days = [Int](1...38)
+    var selectedDay: String = ""
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -106,13 +107,26 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         
         
         if let match = matchDayViewModel.matchAtIndex(indexPath.row){
-            matchDayLabel.text = "MatchDay: \(matchDayViewModel.matchDayNumber)"
-            print("\(match.homeTeam.name) \(match.score.fullTime.homeTeam!) vs \(match.score.fullTime.awayTeam!) \(match.awayTeam.name)")
+            matchDayLabel.text = "MatchDay: \(matchDayViewModel.day ?? matchDayViewModel.matchDayNumber)"
+            print("\(match.homeTeam.name) \(match.score.fullTime.homeTeam ?? 999) vs \(match.score.fullTime.awayTeam ?? 999) \(match.awayTeam.name)")
             
             cell.homeTeamLabel.text = match.homeTeam.name
             cell.awayTeamLabel.text = match.awayTeam.name
-            cell.awayTeamScore.text = "\(match.score.fullTime.awayTeam!)"
-            cell.homeTeamScore.text = "\(match.score.fullTime.homeTeam!)"
+            if match.score.fullTime.awayTeam == nil {
+                cell.awayTeamScore.text = "N/A"
+            }else{
+                cell.awayTeamScore.text = "\(match.score.fullTime.awayTeam!)"
+                
+            }
+            
+            if match.score.fullTime.homeTeam == nil {
+                cell.homeTeamScore.text = "N/A"
+            }else{
+                cell.homeTeamScore.text = "\(match.score.fullTime.homeTeam!)"
+                
+            }
+            
+           
             let teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id )
             if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
                 do {
@@ -120,7 +134,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                     
                     let url = URL(string: urlString)
                     let data = try Data(contentsOf: url!)
-                    print("team index\(String(describing: teamIndex))")
+                    print("team index\(String(describing: url))")
                     let anSvgImage = SVGKImage(data: data)
                     cell.homeTeamImage.image = anSvgImage?.uiImage
                     
@@ -181,6 +195,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
 extension ViewController: MatchDayViewModelDelegate {
     func matchesUpdated() {
         print("\(self.matchDayViewModel.count)")
+        self.matchDayViewModel.day = Int(selectedDay)
         self.tableView.reloadData()
     }
 }

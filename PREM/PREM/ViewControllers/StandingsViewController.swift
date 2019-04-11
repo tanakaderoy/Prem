@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVGKit
 
 class StandingsViewController: UIViewController {
     
@@ -40,17 +41,37 @@ class StandingsViewController: UIViewController {
 }
 extension StandingsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return (standingsViewModel.standings?.count)!
+        if let standings = standingsViewModel.standings{
+            return standings.count
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "standingsCell") as? StandingsTableViewCell else {
             preconditionFailure("Can't find 'schoolCell'")
         }
-        let table = standingsViewModel.standingsAtIndex(1)
+        let table = standingsViewModel.standingsAtIndex(indexPath.row)
         print("\(String(describing: table?.team.name))")
+        cell.labelPostion.text = ("\(table?.position ?? 1)")
+        cell.labelPlayed.text = ("\(table?.playedGames ?? 1)")
+        cell.labelWon.text = ("\(table?.won ?? 1)")
+        cell.labelDrawn.text = ("\(table?.draw ?? 1)")
+        cell.labelLost.text = ("\(table?.lost ?? 1)")
+        cell.labelPoints.text = ("\(table?.points ?? 1)")
+        cell.labelGoalDifference.text = ("\(table?.goalDifference ?? 1)")
+        do{
+        let urlString = table?.team.crestUrl
         
+            let url = URL(string: urlString ?? "test")
+        let data = try Data(contentsOf: url!)
+        print("team index\(String(describing: url))")
+        let anSvgImage = SVGKImage(data: data)
+            cell.clubImageView.image = anSvgImage?.uiImage
+    }
+    catch{
+    print(error)
+    }
         
         
         
