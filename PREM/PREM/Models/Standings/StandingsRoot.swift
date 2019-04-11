@@ -7,29 +7,49 @@
 //
 
 import Foundation
-class StandingsRoot: Codable {
-    let standings: [Standings]
-    
+
+struct TableTeam: Codable {
+    let id: Int
+    let name: String
+    let crestUrl: String
 }
 
-class Standings: Codable {
-    let table: [Table]?
+
+struct Result: Codable {
+    let position: Int
+    let team: TableTeam
+    let playedGames: Int
+    let won: Int
+    let draw: Int
+    let lost: Int
+    let points: Int
+    let goalDifference: Int
+    
+    
     enum CodingKeys: String, CodingKey {
-        case table = "table"
+        case position
+        case team
+        case playedGames
+        case won
+        case draw
+        case lost
+        case points
+        case goalDifference
     }
 }
-class Table: Codable {
-    let position:Int?
-    let team: TableTeam?
-    struct TableTeam: Codable {
-        let id: Int
-        let name: String
-        let crestUrl: URL
+
+struct StandingGroup: Codable {
+    let table: [Result]
+    
+    enum CodingKeys: String, CodingKey {
+        case table
     }
-    let playedGames: Int?
-    let won: Int?
-    let draw: Int?
-    let lost: Int?
-    let points: Int?
-    let goalDifference: Int?
+}
+
+struct Standing: Codable {
+    let standings: [StandingGroup]
+    
+    enum CodingKeys: String, CodingKey {
+        case standings
+    }
 }
