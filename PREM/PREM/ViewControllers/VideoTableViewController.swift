@@ -20,7 +20,7 @@ class VideoTableViewController: UITableViewController, VideoMatchViewModelDelega
     
     var videoMatchViewModel: VideoMatchViewModel!
     var count = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         videoMatchViewModel = VideoMatchViewModel()
@@ -29,7 +29,7 @@ class VideoTableViewController: UITableViewController, VideoMatchViewModelDelega
     override func viewWillAppear(_ animated: Bool) {
         videoMatchViewModel.reloadData()
         
-
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,10 +45,18 @@ class VideoTableViewController: UITableViewController, VideoMatchViewModelDelega
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoTableViewCell;
-        cell.videoTitleLabel.text = "Big Buck Bunndy Video" ;
+        if let matchVideo = videoMatchViewModel.matchAtIndex(indexPath.row){
+            cell.videoTitleLabel.text = matchVideo.title
+        }
+        
+       
         print("VideoMaych\(String(describing: videoMatchViewModel.videoMatch))")
-        let video = videoMatchViewModel.matchAtIndex(indexPath.row)
-        let videoUrl
+        cell.webView.allowsInlineMediaPlayback = true
+        let video = videoMatchViewModel.matchVideoAtIndex(indexPath.row)
+        if let videoUrl = video?.embed{
+            //let requestObj = URLRequest(url: videoUrl )
+            cell.webView.loadHTMLString(videoUrl, baseURL: nil)
+        }
         
         
         
@@ -59,7 +67,7 @@ class VideoTableViewController: UITableViewController, VideoMatchViewModelDelega
         return cell
     }
     
-
+    
 }
 
 

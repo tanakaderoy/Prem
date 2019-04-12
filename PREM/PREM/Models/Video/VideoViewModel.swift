@@ -23,13 +23,19 @@ class VideoMatchViewModel {
         return videoMatch?.count != nil ? videoMatch!.count: 10
     }
     
-    func matchAtIndex(_ index: Int) -> Videos? {
+    func matchVideoAtIndex(_ index: Int) -> Videos? {
         if let videoMatch = videoMatch{
             let video = videoMatch[index]
             return video.videos[0]
         }
         return nil
         
+    }
+    func matchAtIndex(_ index: Int) -> VideoMatch? {
+        if let match = videoMatch{
+            return match[index]
+        }
+        return nil
     }
     
     

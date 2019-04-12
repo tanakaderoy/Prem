@@ -41,10 +41,8 @@ class StandingsViewController: UIViewController {
 }
 extension StandingsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let standings = standingsViewModel.standings{
-            return standings.count
-        }
-        return 1
+        
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
