@@ -31,45 +31,42 @@
         <scene sceneID="jIb-c8-AJa">
             <objects>
                 <tableViewController id="QGv-QX-rpy" customClass="VideoTableViewController" customModule="PREM" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="371" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ugd-a9-Lfx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="307" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ugd-a9-Lfx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="371" id="a7F-4o-AbB" customClass="VideoTableViewCell" customModule="PREM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="371"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="307" id="a7F-4o-AbB" customClass="VideoTableViewCell" customModule="PREM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="307"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a7F-4o-AbB" id="yoX-io-3tg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="370.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="306.66666666666669"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbJ-oG-7OA" customClass="PlayerView" customModule="PREM" customModuleProvider="target">
-                                            <rect key="frame" x="42" y="87" width="265" height="265"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="QbJ-oG-7OA" secondAttribute="height" multiplier="1:1" id="WyF-jq-2UP"/>
-                                            </constraints>
-                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-bS-ZPQ">
-                                            <rect key="frame" x="175" y="23" width="34" height="56"/>
+                                            <rect key="frame" x="175" y="23" width="34" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vg-by-7bB">
+                                            <rect key="frame" x="0.0" y="51" width="375" height="245"/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </webView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QbJ-oG-7OA" secondAttribute="bottom" constant="8" id="16S-C1-JTX"/>
-                                        <constraint firstItem="QbJ-oG-7OA" firstAttribute="top" secondItem="5G4-bS-ZPQ" secondAttribute="bottom" constant="8" id="46m-z1-Kch"/>
-                                        <constraint firstItem="QbJ-oG-7OA" firstAttribute="leading" secondItem="yoX-io-3tg" secondAttribute="leadingMargin" constant="26" id="8YL-e0-dPL"/>
+                                        <constraint firstItem="2Vg-by-7bB" firstAttribute="top" secondItem="5G4-bS-ZPQ" secondAttribute="bottom" constant="7.6699999999999999" id="1st-sW-LQF"/>
+                                        <constraint firstAttribute="bottom" secondItem="2Vg-by-7bB" secondAttribute="bottom" constant="10.67" id="9U7-g4-Mp4"/>
+                                        <constraint firstAttribute="trailing" secondItem="2Vg-by-7bB" secondAttribute="trailing" id="9dn-qM-03R"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="5G4-bS-ZPQ" secondAttribute="trailing" id="X1q-pJ-nG3"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QbJ-oG-7OA" secondAttribute="trailing" constant="52" id="ecz-cy-mqt"/>
+                                        <constraint firstItem="2Vg-by-7bB" firstAttribute="leading" secondItem="yoX-io-3tg" secondAttribute="leading" id="iPb-kF-1us"/>
                                         <constraint firstItem="5G4-bS-ZPQ" firstAttribute="leading" secondItem="yoX-io-3tg" secondAttribute="leadingMargin" constant="159" id="kde-t5-TAf"/>
                                         <constraint firstItem="5G4-bS-ZPQ" firstAttribute="top" secondItem="yoX-io-3tg" secondAttribute="topMargin" constant="12" id="vbq-lU-CgH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="playerView" destination="QbJ-oG-7OA" id="XwV-YI-SCF"/>
                                     <outlet property="videoTitleLabel" destination="5G4-bS-ZPQ" id="gvy-AB-3hy"/>
+                                    <outlet property="webView" destination="2Vg-by-7bB" id="mpu-Gf-xG6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggc-5s-oci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="882"/>
+            <point key="canvasLocation" x="-436" y="881.5270935960591"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

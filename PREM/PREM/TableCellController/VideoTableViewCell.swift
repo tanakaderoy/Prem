@@ -10,7 +10,9 @@ import UIKit
 
 class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var videoTitleLabel: UILabel!
-    @IBOutlet weak var playerView: PlayerView!
+    @IBOutlet weak var webView: UIWebView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

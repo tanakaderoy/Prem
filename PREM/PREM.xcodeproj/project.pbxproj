@@ -20,6 +20,9 @@
 		3F792BDB225D4535009CEFEF /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */; };
 		3FA85261225D12A10045920A /* StandingsRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA85260225D12A10045920A /* StandingsRoot.swift */; };
 		3FA85263225D15110045920A /* StandingsNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA85262225D15110045920A /* StandingsNetworkAdapter.swift */; };
+		3FCDFF9E2260E490007B5F14 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDFF9B2260E490007B5F14 /* VideoViewModel.swift */; };
+		3FCDFF9F2260E490007B5F14 /* VideoNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDFF9C2260E490007B5F14 /* VideoNetworkAdapter.swift */; };
+		3FCDFFA22260E537007B5F14 /* VideoRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDFFA12260E537007B5F14 /* VideoRoot.swift */; };
 		3FD7D313224D35A000D8FD83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D312224D35A000D8FD83 /* AppDelegate.swift */; };
 		3FD7D315224D35A000D8FD83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7D314224D35A000D8FD83 /* ViewController.swift */; };
 		3FD7D318224D35A000D8FD83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD7D316224D35A000D8FD83 /* Main.storyboard */; };
@@ -73,6 +76,9 @@
 		3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
 		3FA85260225D12A10045920A /* StandingsRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRoot.swift; sourceTree = "<group>"; };
 		3FA85262225D15110045920A /* StandingsNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsNetworkAdapter.swift; sourceTree = "<group>"; };
+		3FCDFF9B2260E490007B5F14 /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		3FCDFF9C2260E490007B5F14 /* VideoNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoNetworkAdapter.swift; sourceTree = "<group>"; };
+		3FCDFFA12260E537007B5F14 /* VideoRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRoot.swift; sourceTree = "<group>"; };
 		3FD7D30F224D35A000D8FD83 /* PREM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PREM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD7D312224D35A000D8FD83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FD7D314224D35A000D8FD83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +156,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3FCDFFA02260E495007B5F14 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDFFA12260E537007B5F14 /* VideoRoot.swift */,
+				3FCDFF9C2260E490007B5F14 /* VideoNetworkAdapter.swift */,
+				3FCDFF9B2260E490007B5F14 /* VideoViewModel.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		3FD7D306224D35A000D8FD83 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +206,7 @@
 		3FD7D326224D369700D8FD83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3FCDFFA02260E495007B5F14 /* Video */,
 				3FA8525F225D12890045920A /* Standings */,
 				3F1DC5742252A6BE00F02FAF /* IndividualMatchInfo */,
 				3FD7D33B224D6C9400D8FD83 /* Teams */,
@@ -376,7 +393,10 @@
 				3FD7D330224D421F00D8FD83 /* AwayTeam.swift in Sources */,
 				3FD7D32E224D41F400D8FD83 /* HomeTeam.swift in Sources */,
 				3F3F61E8225E8E5F00F0F0A3 /* StandingsTableViewCell.swift in Sources */,
+				3FCDFFA22260E537007B5F14 /* VideoRoot.swift in Sources */,
 				3F1E0F37225680AE0093A4E1 /* VideoTableViewController.swift in Sources */,
+				3FCDFF9E2260E490007B5F14 /* VideoViewModel.swift in Sources */,
+				3FCDFF9F2260E490007B5F14 /* VideoNetworkAdapter.swift in Sources */,
 				3FD7D339224D514A00D8FD83 /* MatchesTableViewCell.swift in Sources */,
 				3F1E0F392256815B0093A4E1 /* PlayerView.swift in Sources */,
 				87C21D16224D839B0094466F /* Teams.swift in Sources */,

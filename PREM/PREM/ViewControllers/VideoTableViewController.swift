@@ -10,36 +10,56 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class VideoTableViewController: UITableViewController {
+class VideoTableViewController: UITableViewController, VideoMatchViewModelDelegate {
+    func videoMatchUpdated() {
+        print("sss\(String(describing: videoMatchViewModel.videoMatch?.count))")
+        self.count = (videoMatchViewModel.videoMatch?.count)!
+        print("\(self.count)")
+        self.tableView.reloadData()
+    }
+    
+    var videoMatchViewModel: VideoMatchViewModel!
+    var count = 0
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        videoMatchViewModel = VideoMatchViewModel()
+        videoMatchViewModel.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        videoMatchViewModel.reloadData()
+        
+
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        //videoMatchUpdated()
+        
+        if let standings = videoMatchViewModel.videoMatch{
+            return standings.count
+        }
+        
+        print("\(self.count)")
+        return self.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoTableViewCell;
         cell.videoTitleLabel.text = "Big Buck Bunndy Video" ;
-        let url = NSURL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
-        let avPlayer = AVPlayer(url: url! as URL);
-        cell.playerView?.playerLayer.player = avPlayer;
+        print("VideoMaych\(String(describing: videoMatchViewModel.videoMatch))")
+        let video = videoMatchViewModel.matchAtIndex(indexPath.row)
+        let videoUrl
+        
+        
+        
+        
+        
+        
+        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let videoCell = (cell as? VideoTableViewCell) else { return };
-        let visibleCells = tableView.visibleCells;
-        let minIndex = visibleCells.startIndex;
-        if tableView.visibleCells.index(of: cell) == minIndex {
-            videoCell.playerView.player?.play();
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let videoCell = cell as? VideoTableViewCell else { return };
-        
-        videoCell.playerView.player?.pause();
-        videoCell.playerView.player = nil;
-    }
+
 }
 
 
