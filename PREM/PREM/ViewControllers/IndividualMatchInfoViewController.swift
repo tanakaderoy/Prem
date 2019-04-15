@@ -24,10 +24,6 @@ class IndividualMatchInfoViewController: UIViewController {
     @IBOutlet weak var awayTeamLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
         if let id = id{
             matchInfoViewModel = MatchInfoViewModel(id: id)
             matchInfoViewModel.delegate = self
@@ -40,16 +36,35 @@ class IndividualMatchInfoViewController: UIViewController {
             
         }
         
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       
+        
     }
     func updateUI(){
         let match = matchInfoViewModel.matchInfo?.match
         homeTeamLabel.text = match?.homeTeam.name
         awayTeamLabel.text = match?.awayTeam.name
-        let referee = match?.referees[0]
-        print("\(String(describing: referee?.name))")
-        refereeLabel.text = referee?.name
-        homeTeamScore.text = "\(match?.score.fullTime.homeTeam ?? 9999)"
-        awayTeamScore.text = "\(match?.score.fullTime.awayTeam ?? 9999)"
+        
+        if (match?.referees.count)! > 0 {
+        if let referee = match?.referees.first {
+            refereeLabel.text = referee.name
+        }
+        }else{
+            refereeLabel.text = "N/A"
+        }
+        if let homeScore = match?.score.fullTime.homeTeam {
+            homeTeamScore.text = "\(homeScore)"
+        }else{
+            homeTeamScore.text = "N/A"
+        }
+        if let awayScore = match?.score.fullTime.awayTeam {
+            awayTeamScore.text = "\(awayScore)"
+        }else{
+            awayTeamScore.text = "N/A"
+        }
+        
         venueLabel.text = match?.venue
         
         let teamIndex  = teamViewModel.getIndexOfTeamWithId(match?.homeTeam.id ?? 999 )

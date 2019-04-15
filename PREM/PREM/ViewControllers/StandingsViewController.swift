@@ -19,11 +19,12 @@ class StandingsViewController: UIViewController {
         super.viewDidLoad()
         standingsViewModel = StandingsViewModel()
         standingsViewModel.delegate = self
+         standingsViewModel.reloadData()
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        standingsViewModel.reloadData()
+       
         
     }
     

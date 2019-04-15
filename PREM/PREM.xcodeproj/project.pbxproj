@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F16BB2E226531A6004ED809 /* SvgImg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB2D226531A5004ED809 /* SvgImg */; };
 		3F1DC5732252A3C500F02FAF /* che.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DC5722252A3C500F02FAF /* che.png */; };
 		3F1DC5762252A6E400F02FAF /* MatchInfoRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DC5752252A6E400F02FAF /* MatchInfoRoot.swift */; };
 		3F1DC5782252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DC5772252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift */; };
@@ -63,6 +64,27 @@
 /* Begin PBXFileReference section */
 		177D2148D4CA8D54D1AFF0D7 /* Pods-PREM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PREM.debug.xcconfig"; path = "Target Support Files/Pods-PREM/Pods-PREM.debug.xcconfig"; sourceTree = "<group>"; };
 		1BD401583F9CEEA2C83E5693 /* Pods-PREM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PREM.release.xcconfig"; path = "Target Support Files/Pods-PREM/Pods-PREM.release.xcconfig"; sourceTree = "<group>"; };
+		3F16BB2D226531A5004ED809 /* SvgImg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SvgImg; sourceTree = "<group>"; };
+		3F16BB32226534AA004ED809 /* CAR.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = CAR.svg; sourceTree = "<group>"; };
+		3F16BB33226534AA004ED809 /* FUL.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FUL.svg; sourceTree = "<group>"; };
+		3F16BB34226534AA004ED809 /* WAT.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WAT.svg; sourceTree = "<group>"; };
+		3F16BB35226534AB004ED809 /* LIV.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LIV.svg; sourceTree = "<group>"; };
+		3F16BB36226534AB004ED809 /* MUN.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MUN.svg; sourceTree = "<group>"; };
+		3F16BB37226534AB004ED809 /* NEW.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NEW.svg; sourceTree = "<group>"; };
+		3F16BB38226534AC004ED809 /* HUD.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HUD.svg; sourceTree = "<group>"; };
+		3F16BB39226534AC004ED809 /* MCI.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MCI.svg; sourceTree = "<group>"; };
+		3F16BB3A226534AC004ED809 /* BOU.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BOU.svg; sourceTree = "<group>"; };
+		3F16BB3B226534AC004ED809 /* WHU.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WHU.svg; sourceTree = "<group>"; };
+		3F16BB3C226534AC004ED809 /* CRY.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CRY.svg; sourceTree = "<group>"; };
+		3F16BB3D226534AD004ED809 /* BUR.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BUR.svg; sourceTree = "<group>"; };
+		3F16BB3E226534AD004ED809 /* WOL.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WOL.svg; sourceTree = "<group>"; };
+		3F16BB3F226534AD004ED809 /* ARS.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ARS.svg; sourceTree = "<group>"; };
+		3F16BB40226534AD004ED809 /* BHA.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BHA.svg; sourceTree = "<group>"; };
+		3F16BB41226534AD004ED809 /* LEI.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LEI.svg; sourceTree = "<group>"; };
+		3F16BB42226534AD004ED809 /* CHE.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CHE.svg; sourceTree = "<group>"; };
+		3F16BB43226534AE004ED809 /* TOT.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TOT.svg; sourceTree = "<group>"; };
+		3F16BB44226534AE004ED809 /* EVE.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EVE.svg; sourceTree = "<group>"; };
+		3F16BB45226534AE004ED809 /* SOU.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SOU.svg; sourceTree = "<group>"; };
 		3F1DC5722252A3C500F02FAF /* che.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = che.png; sourceTree = "<group>"; };
 		3F1DC5752252A6E400F02FAF /* MatchInfoRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoRoot.swift; sourceTree = "<group>"; };
 		3F1DC5772252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoNetworkAdapter.swift; sourceTree = "<group>"; };
@@ -117,6 +139,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F16BB312265349D004ED809 /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
 		3F1DC5742252A6BE00F02FAF /* IndividualMatchInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,12 +217,34 @@
 		3FD7D311224D35A000D8FD83 /* PREM */ = {
 			isa = PBXGroup;
 			children = (
+				3F16BB3F226534AD004ED809 /* ARS.svg */,
+				3F16BB40226534AD004ED809 /* BHA.svg */,
+				3F16BB3A226534AC004ED809 /* BOU.svg */,
+				3F16BB3D226534AD004ED809 /* BUR.svg */,
+				3F16BB32226534AA004ED809 /* CAR.svg */,
+				3F16BB42226534AD004ED809 /* CHE.svg */,
+				3F16BB3C226534AC004ED809 /* CRY.svg */,
+				3F16BB44226534AE004ED809 /* EVE.svg */,
+				3F16BB33226534AA004ED809 /* FUL.svg */,
+				3F16BB38226534AC004ED809 /* HUD.svg */,
+				3F16BB41226534AD004ED809 /* LEI.svg */,
+				3F16BB35226534AB004ED809 /* LIV.svg */,
+				3F16BB39226534AC004ED809 /* MCI.svg */,
+				3F16BB36226534AB004ED809 /* MUN.svg */,
+				3F16BB37226534AB004ED809 /* NEW.svg */,
+				3F16BB45226534AE004ED809 /* SOU.svg */,
+				3F16BB43226534AE004ED809 /* TOT.svg */,
+				3F16BB34226534AA004ED809 /* WAT.svg */,
+				3F16BB3B226534AC004ED809 /* WHU.svg */,
+				3F16BB3E226534AD004ED809 /* WOL.svg */,
+				3F16BB312265349D004ED809 /* SVG */,
 				3F1DC57D2252B42700F02FAF /* TableCellController */,
 				3FD7D337224D50E300D8FD83 /* ViewControllers */,
 				3FD7D326224D369700D8FD83 /* Models */,
 				3FD7D312224D35A000D8FD83 /* AppDelegate.swift */,
 				3FD7D316224D35A000D8FD83 /* Main.storyboard */,
 				3FD7D319224D35A100D8FD83 /* Assets.xcassets */,
+				3F16BB2D226531A5004ED809 /* SvgImg */,
 				3F1DC5722252A3C500F02FAF /* che.png */,
 				3FD7D31B224D35A100D8FD83 /* LaunchScreen.storyboard */,
 				3FD7D31E224D35A100D8FD83 /* Info.plist */,
@@ -323,6 +374,7 @@
 			files = (
 				3FD7D31D224D35A100D8FD83 /* LaunchScreen.storyboard in Resources */,
 				3F1DC5732252A3C500F02FAF /* che.png in Resources */,
+				3F16BB2E226531A6004ED809 /* SvgImg in Resources */,
 				3FD7D31A224D35A100D8FD83 /* Assets.xcassets in Resources */,
 				3FD7D318224D35A000D8FD83 /* Main.storyboard in Resources */,
 			);

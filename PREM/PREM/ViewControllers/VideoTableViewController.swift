@@ -25,9 +25,10 @@ class VideoTableViewController: UITableViewController, VideoMatchViewModelDelega
         super.viewDidLoad()
         videoMatchViewModel = VideoMatchViewModel()
         videoMatchViewModel.delegate = self
+        videoMatchViewModel.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        videoMatchViewModel.reloadData()
+        
         
         
     }

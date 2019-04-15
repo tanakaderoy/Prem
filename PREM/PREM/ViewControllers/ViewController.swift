@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         matchDayViewModel = MatchDayViewModel()
         matchDayViewModel.delegate = self
         teamViewModel = TeamViewModel()
-      
+        matchDayViewModel.reloadData()
+        
+        teamViewModel.reloadData()
         
         
         
@@ -44,9 +46,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        matchDayViewModel.reloadData()
         
-        teamViewModel.reloadData()
         
         
     }
@@ -126,23 +126,23 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                 
             }
             
-           
+            
             let teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id )
             if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
-                do {
-                    let urlString = "\(team.crestUrl)"
-                    
-                    let url = URL(string: urlString)
-                    let data = try Data(contentsOf: url!)
-                    print("team index\(String(describing: url))")
-                    let anSvgImage = SVGKImage(data: data)
-                    cell.homeTeamImage.image = anSvgImage?.uiImage
-                    
-                    print("team index: \(team.id)")
+                
+                print("\(team.tla).svg")
+                if let imagePath = Bundle.main.path(forResource: "\(team.tla)", ofType: "svg")
+                {
+                    print(imagePath)
+                    let anSvgImage = SVGKImage(contentsOfFile: imagePath)
+                     cell.homeTeamImage.image = anSvgImage?.uiImage
                 }
-                catch{
-                    print(error)
-                }
+               
+               
+                
+                print("team index: \(team.id)")
+                
+                
                 
             }
             let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id )
