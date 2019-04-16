@@ -625,6 +625,7 @@
                                     <outlet property="articleImageView" destination="SQr-Vb-59G" id="mQn-4I-0Lg"/>
                                     <outlet property="articleTitleLabel" destination="2PE-0O-scR" id="zTS-p2-vXz"/>
                                     <outlet property="authorLabel" destination="6N0-MS-InG" id="lNW-We-82c"/>
+                                    <segue destination="POp-ej-gdf" kind="show" id="Xmo-4y-dzK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -639,11 +640,41 @@
             </objects>
             <point key="canvasLocation" x="1549.5999999999999" y="1504.4334975369459"/>
         </scene>
-        <!--Item-->
+        <!--News Article View Controller-->
+        <scene sceneID="213-Ww-b8c">
+            <objects>
+                <viewController id="POp-ej-gdf" customClass="NewsArticleViewController" customModule="PREM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LlC-wf-fpw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKH-2i-FYn">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FKH-2i-FYn" firstAttribute="bottom" secondItem="h9x-5B-EDm" secondAttribute="bottom" id="D6Y-Ft-H0I"/>
+                            <constraint firstItem="FKH-2i-FYn" firstAttribute="trailing" secondItem="h9x-5B-EDm" secondAttribute="trailing" id="LWR-hD-QdL"/>
+                            <constraint firstItem="FKH-2i-FYn" firstAttribute="top" secondItem="h9x-5B-EDm" secondAttribute="top" id="wly-jO-kl1"/>
+                            <constraint firstItem="FKH-2i-FYn" firstAttribute="leading" secondItem="h9x-5B-EDm" secondAttribute="leading" id="y4j-36-foh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h9x-5B-EDm"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="FKH-2i-FYn" id="v6o-ao-oM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goZ-Ru-hZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525.5999999999999" y="1634.4827586206898"/>
+        </scene>
+        <!--News-->
         <scene sceneID="TU6-KN-44k">
             <objects>
                 <navigationController id="AEz-C4-230" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jae-tM-40i"/>
+                    <tabBarItem key="tabBarItem" title="News" image="icons8-google-news-50" id="jae-tM-40i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iyR-Zp-3Nn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -681,6 +712,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-google-news-50" width="37.5" height="37.5"/>
         <image name="icons8-soccer-50" width="37.5" height="37.5"/>
         <image name="icons8-stadium-50" width="37.5" height="37.5"/>
         <image name="icons8-video-50" width="37.5" height="37.5"/>

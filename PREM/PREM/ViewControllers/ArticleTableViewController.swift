@@ -29,9 +29,19 @@ class ArticleTableViewController: UITableViewController, ArticleViewModelDelegat
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    override func viewWillAppear(_ animated: Bool) {
-        articleViewModel.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? NewsArticleViewController {
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+                if let article = articleViewModel.articleAtIndex(row){
+                    vc.url = article.url
+                }
+            }
+        }
     }
+  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //videoMatchUpdated()
         
@@ -40,7 +50,7 @@ class ArticleTableViewController: UITableViewController, ArticleViewModelDelegat
         }
         
         
-        return 1
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,6 +66,9 @@ class ArticleTableViewController: UITableViewController, ArticleViewModelDelegat
                 }
             }
         }
+        
+        
+        
         
         
        

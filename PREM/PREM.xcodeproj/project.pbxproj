@@ -40,6 +40,7 @@
 		3F1E63FF22664CF1009096C4 /* ArticleRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E63FE22664CF1009096C4 /* ArticleRoot.swift */; };
 		3F1E640122664DD9009096C4 /* ArticleNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E640022664DD9009096C4 /* ArticleNetworkAdapter.swift */; };
 		3F1E640322664E86009096C4 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E640222664E86009096C4 /* ArticleViewModel.swift */; };
+		3F1E6405226672EE009096C4 /* NewsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E6404226672EE009096C4 /* NewsArticleViewController.swift */; };
 		3F3F61E8225E8E5F00F0F0A3 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */; };
 		3F3F61EA225E90FF00F0F0A3 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */; };
 		3F792BDB225D4535009CEFEF /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */; };
@@ -121,6 +122,7 @@
 		3F1E63FE22664CF1009096C4 /* ArticleRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRoot.swift; sourceTree = "<group>"; };
 		3F1E640022664DD9009096C4 /* ArticleNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNetworkAdapter.swift; sourceTree = "<group>"; };
 		3F1E640222664E86009096C4 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		3F1E6404226672EE009096C4 /* NewsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleViewController.swift; sourceTree = "<group>"; };
 		3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				3F1E0F382256815B0093A4E1 /* PlayerView.swift */,
 				3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */,
 				3F1E63F9226644E4009096C4 /* ArticleTableViewController.swift */,
+				3F1E6404226672EE009096C4 /* NewsArticleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				3FD7D332224D44D600D8FD83 /* MatchNetworkAdapter.swift in Sources */,
 				3FD7D313224D35A000D8FD83 /* AppDelegate.swift in Sources */,
 				3FD7D336224D4F1700D8FD83 /* Util.swift in Sources */,
+				3F1E6405226672EE009096C4 /* NewsArticleViewController.swift in Sources */,
 				3F1DC5762252A6E400F02FAF /* MatchInfoRoot.swift in Sources */,
 				3F1E640122664DD9009096C4 /* ArticleNetworkAdapter.swift in Sources */,
 				3FD7D341224D6E3800D8FD83 /* TeamViewModel.swift in Sources */,
