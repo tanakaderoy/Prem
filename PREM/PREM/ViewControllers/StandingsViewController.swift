@@ -12,19 +12,23 @@ import SVGKit
 class StandingsViewController: UIViewController {
     
     var standingsViewModel: StandingsViewModel!
+    var teamViewModel: TeamViewModel!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         standingsViewModel = StandingsViewModel()
+        
         standingsViewModel.delegate = self
-         standingsViewModel.reloadData()
+        teamViewModel = TeamViewModel()
+        standingsViewModel.reloadData()
+        teamViewModel.reloadData()
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-       
+        
         
     }
     
@@ -59,19 +63,20 @@ extension StandingsViewController: UITableViewDelegate,UITableViewDataSource{
         cell.labelLost.text = ("\(table?.lost ?? 1)")
         cell.labelPoints.text = ("\(table?.points ?? 1)")
         cell.labelGoalDifference.text = ("\(table?.goalDifference ?? 1)")
-        do{
-        let urlString = table?.team.crestUrl
+        if let teamIndex = teamViewModel.getIndexOfTeamWithId(table?.team.id ?? 0){
+             let team = teamViewModel.teamAtIndex(teamIndex)
+            if let imagePath = Bundle.main.path(forResource: "\(team!.tla)", ofType: "svg")
+            {
+                
+                let anSvgImage = SVGKImage(contentsOfFile: imagePath)
+                cell.clubImageView.image = anSvgImage?.uiImage
+            }
+        }
         
-            let url = URL(string: urlString ?? "test")
-        let data = try Data(contentsOf: url!)
-        print("team index\(String(describing: url))")
-        let anSvgImage = SVGKImage(data: data)
-            cell.clubImageView.image = anSvgImage?.uiImage
-    }
-    catch{
-    print(error)
-    }
         
+        
+        
+       
         
         
         

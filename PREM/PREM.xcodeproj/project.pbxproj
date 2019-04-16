@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F16BB2E226531A6004ED809 /* SvgImg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB2D226531A5004ED809 /* SvgImg */; };
 		3F1DC5732252A3C500F02FAF /* che.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DC5722252A3C500F02FAF /* che.png */; };
 		3F1DC5762252A6E400F02FAF /* MatchInfoRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DC5752252A6E400F02FAF /* MatchInfoRoot.swift */; };
 		3F1DC5782252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DC5772252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift */; };
@@ -16,6 +15,31 @@
 		3F1E0F37225680AE0093A4E1 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E0F36225680AE0093A4E1 /* VideoTableViewController.swift */; };
 		3F1E0F392256815B0093A4E1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E0F382256815B0093A4E1 /* PlayerView.swift */; };
 		3F1E0F3B2256820E0093A4E1 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E0F3A2256820E0093A4E1 /* VideoTableViewCell.swift */; };
+		3F1E63E522663BA1009096C4 /* ARS.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB3F226534AD004ED809 /* ARS.svg */; };
+		3F1E63E622663BA1009096C4 /* BHA.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB40226534AD004ED809 /* BHA.svg */; };
+		3F1E63E722663BA1009096C4 /* BOU.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB3A226534AC004ED809 /* BOU.svg */; };
+		3F1E63E822663BA1009096C4 /* BUR.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB3D226534AD004ED809 /* BUR.svg */; };
+		3F1E63E922663BA1009096C4 /* CAR.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB32226534AA004ED809 /* CAR.svg */; };
+		3F1E63EA22663BA1009096C4 /* CHE.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB42226534AD004ED809 /* CHE.svg */; };
+		3F1E63EB22663BA1009096C4 /* CRY.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB3C226534AC004ED809 /* CRY.svg */; };
+		3F1E63EC22663BA1009096C4 /* EVE.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB44226534AE004ED809 /* EVE.svg */; };
+		3F1E63ED22663BA1009096C4 /* FUL.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB33226534AA004ED809 /* FUL.svg */; };
+		3F1E63EE22663BA1009096C4 /* HUD.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB38226534AC004ED809 /* HUD.svg */; };
+		3F1E63EF22663BA1009096C4 /* LEI.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB41226534AD004ED809 /* LEI.svg */; };
+		3F1E63F022663BA1009096C4 /* LIV.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB35226534AB004ED809 /* LIV.svg */; };
+		3F1E63F122663BA1009096C4 /* MCI.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB39226534AC004ED809 /* MCI.svg */; };
+		3F1E63F222663BA1009096C4 /* MUN.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB36226534AB004ED809 /* MUN.svg */; };
+		3F1E63F322663BA1009096C4 /* NEW.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB37226534AB004ED809 /* NEW.svg */; };
+		3F1E63F422663BA1009096C4 /* SOU.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB45226534AE004ED809 /* SOU.svg */; };
+		3F1E63F522663BA1009096C4 /* TOT.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB43226534AE004ED809 /* TOT.svg */; };
+		3F1E63F622663BA1009096C4 /* WAT.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB34226534AA004ED809 /* WAT.svg */; };
+		3F1E63F722663BA1009096C4 /* WHU.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB3B226534AC004ED809 /* WHU.svg */; };
+		3F1E63F822663BA1009096C4 /* WOL.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3F16BB3E226534AD004ED809 /* WOL.svg */; };
+		3F1E63FA226644E4009096C4 /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E63F9226644E4009096C4 /* ArticleTableViewController.swift */; };
+		3F1E63FC22664890009096C4 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E63FB22664890009096C4 /* ArticleTableViewCell.swift */; };
+		3F1E63FF22664CF1009096C4 /* ArticleRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E63FE22664CF1009096C4 /* ArticleRoot.swift */; };
+		3F1E640122664DD9009096C4 /* ArticleNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E640022664DD9009096C4 /* ArticleNetworkAdapter.swift */; };
+		3F1E640322664E86009096C4 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E640222664E86009096C4 /* ArticleViewModel.swift */; };
 		3F3F61E8225E8E5F00F0F0A3 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */; };
 		3F3F61EA225E90FF00F0F0A3 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */; };
 		3F792BDB225D4535009CEFEF /* StandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */; };
@@ -64,7 +88,6 @@
 /* Begin PBXFileReference section */
 		177D2148D4CA8D54D1AFF0D7 /* Pods-PREM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PREM.debug.xcconfig"; path = "Target Support Files/Pods-PREM/Pods-PREM.debug.xcconfig"; sourceTree = "<group>"; };
 		1BD401583F9CEEA2C83E5693 /* Pods-PREM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PREM.release.xcconfig"; path = "Target Support Files/Pods-PREM/Pods-PREM.release.xcconfig"; sourceTree = "<group>"; };
-		3F16BB2D226531A5004ED809 /* SvgImg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SvgImg; sourceTree = "<group>"; };
 		3F16BB32226534AA004ED809 /* CAR.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = CAR.svg; sourceTree = "<group>"; };
 		3F16BB33226534AA004ED809 /* FUL.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FUL.svg; sourceTree = "<group>"; };
 		3F16BB34226534AA004ED809 /* WAT.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WAT.svg; sourceTree = "<group>"; };
@@ -93,6 +116,11 @@
 		3F1E0F36225680AE0093A4E1 /* VideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		3F1E0F382256815B0093A4E1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		3F1E0F3A2256820E0093A4E1 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		3F1E63F9226644E4009096C4 /* ArticleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
+		3F1E63FB22664890009096C4 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		3F1E63FE22664CF1009096C4 /* ArticleRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRoot.swift; sourceTree = "<group>"; };
+		3F1E640022664DD9009096C4 /* ArticleNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNetworkAdapter.swift; sourceTree = "<group>"; };
+		3F1E640222664E86009096C4 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		3F792BDA225D4535009CEFEF /* StandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +170,26 @@
 		3F16BB312265349D004ED809 /* SVG */ = {
 			isa = PBXGroup;
 			children = (
+				3F16BB3F226534AD004ED809 /* ARS.svg */,
+				3F16BB40226534AD004ED809 /* BHA.svg */,
+				3F16BB3A226534AC004ED809 /* BOU.svg */,
+				3F16BB3D226534AD004ED809 /* BUR.svg */,
+				3F16BB32226534AA004ED809 /* CAR.svg */,
+				3F16BB42226534AD004ED809 /* CHE.svg */,
+				3F16BB3C226534AC004ED809 /* CRY.svg */,
+				3F16BB44226534AE004ED809 /* EVE.svg */,
+				3F16BB33226534AA004ED809 /* FUL.svg */,
+				3F16BB38226534AC004ED809 /* HUD.svg */,
+				3F16BB41226534AD004ED809 /* LEI.svg */,
+				3F16BB35226534AB004ED809 /* LIV.svg */,
+				3F16BB39226534AC004ED809 /* MCI.svg */,
+				3F16BB36226534AB004ED809 /* MUN.svg */,
+				3F16BB37226534AB004ED809 /* NEW.svg */,
+				3F16BB45226534AE004ED809 /* SOU.svg */,
+				3F16BB43226534AE004ED809 /* TOT.svg */,
+				3F16BB34226534AA004ED809 /* WAT.svg */,
+				3F16BB3B226534AC004ED809 /* WHU.svg */,
+				3F16BB3E226534AD004ED809 /* WOL.svg */,
 			);
 			path = SVG;
 			sourceTree = "<group>";
@@ -162,8 +210,19 @@
 				3FD7D338224D514A00D8FD83 /* MatchesTableViewCell.swift */,
 				3F1E0F3A2256820E0093A4E1 /* VideoTableViewCell.swift */,
 				3F3F61E7225E8E5F00F0F0A3 /* StandingsTableViewCell.swift */,
+				3F1E63FB22664890009096C4 /* ArticleTableViewCell.swift */,
 			);
 			path = TableCellController;
+			sourceTree = "<group>";
+		};
+		3F1E63FD22664CE1009096C4 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				3F1E63FE22664CF1009096C4 /* ArticleRoot.swift */,
+				3F1E640022664DD9009096C4 /* ArticleNetworkAdapter.swift */,
+				3F1E640222664E86009096C4 /* ArticleViewModel.swift */,
+			);
+			path = Article;
 			sourceTree = "<group>";
 		};
 		3FA8525F225D12890045920A /* Standings */ = {
@@ -217,26 +276,6 @@
 		3FD7D311224D35A000D8FD83 /* PREM */ = {
 			isa = PBXGroup;
 			children = (
-				3F16BB3F226534AD004ED809 /* ARS.svg */,
-				3F16BB40226534AD004ED809 /* BHA.svg */,
-				3F16BB3A226534AC004ED809 /* BOU.svg */,
-				3F16BB3D226534AD004ED809 /* BUR.svg */,
-				3F16BB32226534AA004ED809 /* CAR.svg */,
-				3F16BB42226534AD004ED809 /* CHE.svg */,
-				3F16BB3C226534AC004ED809 /* CRY.svg */,
-				3F16BB44226534AE004ED809 /* EVE.svg */,
-				3F16BB33226534AA004ED809 /* FUL.svg */,
-				3F16BB38226534AC004ED809 /* HUD.svg */,
-				3F16BB41226534AD004ED809 /* LEI.svg */,
-				3F16BB35226534AB004ED809 /* LIV.svg */,
-				3F16BB39226534AC004ED809 /* MCI.svg */,
-				3F16BB36226534AB004ED809 /* MUN.svg */,
-				3F16BB37226534AB004ED809 /* NEW.svg */,
-				3F16BB45226534AE004ED809 /* SOU.svg */,
-				3F16BB43226534AE004ED809 /* TOT.svg */,
-				3F16BB34226534AA004ED809 /* WAT.svg */,
-				3F16BB3B226534AC004ED809 /* WHU.svg */,
-				3F16BB3E226534AD004ED809 /* WOL.svg */,
 				3F16BB312265349D004ED809 /* SVG */,
 				3F1DC57D2252B42700F02FAF /* TableCellController */,
 				3FD7D337224D50E300D8FD83 /* ViewControllers */,
@@ -244,7 +283,6 @@
 				3FD7D312224D35A000D8FD83 /* AppDelegate.swift */,
 				3FD7D316224D35A000D8FD83 /* Main.storyboard */,
 				3FD7D319224D35A100D8FD83 /* Assets.xcassets */,
-				3F16BB2D226531A5004ED809 /* SvgImg */,
 				3F1DC5722252A3C500F02FAF /* che.png */,
 				3FD7D31B224D35A100D8FD83 /* LaunchScreen.storyboard */,
 				3FD7D31E224D35A100D8FD83 /* Info.plist */,
@@ -257,6 +295,7 @@
 		3FD7D326224D369700D8FD83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3F1E63FD22664CE1009096C4 /* Article */,
 				3FCDFFA02260E495007B5F14 /* Video */,
 				3FA8525F225D12890045920A /* Standings */,
 				3F1DC5742252A6BE00F02FAF /* IndividualMatchInfo */,
@@ -274,6 +313,7 @@
 				3F1E0F36225680AE0093A4E1 /* VideoTableViewController.swift */,
 				3F1E0F382256815B0093A4E1 /* PlayerView.swift */,
 				3F3F61E9225E90FF00F0F0A3 /* StandingsViewController.swift */,
+				3F1E63F9226644E4009096C4 /* ArticleTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -372,9 +412,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1E63E522663BA1009096C4 /* ARS.svg in Resources */,
+				3F1E63E622663BA1009096C4 /* BHA.svg in Resources */,
+				3F1E63E722663BA1009096C4 /* BOU.svg in Resources */,
+				3F1E63E822663BA1009096C4 /* BUR.svg in Resources */,
+				3F1E63E922663BA1009096C4 /* CAR.svg in Resources */,
+				3F1E63EA22663BA1009096C4 /* CHE.svg in Resources */,
+				3F1E63EB22663BA1009096C4 /* CRY.svg in Resources */,
+				3F1E63EC22663BA1009096C4 /* EVE.svg in Resources */,
+				3F1E63ED22663BA1009096C4 /* FUL.svg in Resources */,
+				3F1E63EE22663BA1009096C4 /* HUD.svg in Resources */,
+				3F1E63EF22663BA1009096C4 /* LEI.svg in Resources */,
+				3F1E63F022663BA1009096C4 /* LIV.svg in Resources */,
+				3F1E63F122663BA1009096C4 /* MCI.svg in Resources */,
+				3F1E63F222663BA1009096C4 /* MUN.svg in Resources */,
+				3F1E63F322663BA1009096C4 /* NEW.svg in Resources */,
+				3F1E63F422663BA1009096C4 /* SOU.svg in Resources */,
+				3F1E63F522663BA1009096C4 /* TOT.svg in Resources */,
+				3F1E63F622663BA1009096C4 /* WAT.svg in Resources */,
+				3F1E63F722663BA1009096C4 /* WHU.svg in Resources */,
+				3F1E63F822663BA1009096C4 /* WOL.svg in Resources */,
 				3FD7D31D224D35A100D8FD83 /* LaunchScreen.storyboard in Resources */,
 				3F1DC5732252A3C500F02FAF /* che.png in Resources */,
-				3F16BB2E226531A6004ED809 /* SvgImg in Resources */,
 				3FD7D31A224D35A100D8FD83 /* Assets.xcassets in Resources */,
 				3FD7D318224D35A000D8FD83 /* Main.storyboard in Resources */,
 			);
@@ -438,6 +497,7 @@
 				3FD7D33F224D6D6500D8FD83 /* TeamNetworkAdapter.swift in Sources */,
 				3F3F61EA225E90FF00F0F0A3 /* StandingsViewController.swift in Sources */,
 				3F1DC5782252AA0D00F02FAF /* MatchInfoNetworkAdapter.swift in Sources */,
+				3F1E63FA226644E4009096C4 /* ArticleTableViewController.swift in Sources */,
 				3F1E0F3B2256820E0093A4E1 /* VideoTableViewCell.swift in Sources */,
 				3FD7D315224D35A000D8FD83 /* ViewController.swift in Sources */,
 				3F1DC57C2252AEEF00F02FAF /* IndividualMatchInfoViewController.swift in Sources */,
@@ -445,6 +505,7 @@
 				3FD7D330224D421F00D8FD83 /* AwayTeam.swift in Sources */,
 				3FD7D32E224D41F400D8FD83 /* HomeTeam.swift in Sources */,
 				3F3F61E8225E8E5F00F0F0A3 /* StandingsTableViewCell.swift in Sources */,
+				3F1E63FF22664CF1009096C4 /* ArticleRoot.swift in Sources */,
 				3FCDFFA22260E537007B5F14 /* VideoRoot.swift in Sources */,
 				3F1E0F37225680AE0093A4E1 /* VideoTableViewController.swift in Sources */,
 				3FCDFF9E2260E490007B5F14 /* VideoViewModel.swift in Sources */,
@@ -459,10 +520,13 @@
 				3FD7D313224D35A000D8FD83 /* AppDelegate.swift in Sources */,
 				3FD7D336224D4F1700D8FD83 /* Util.swift in Sources */,
 				3F1DC5762252A6E400F02FAF /* MatchInfoRoot.swift in Sources */,
+				3F1E640122664DD9009096C4 /* ArticleNetworkAdapter.swift in Sources */,
 				3FD7D341224D6E3800D8FD83 /* TeamViewModel.swift in Sources */,
 				3FD7D328224D3B2D00D8FD83 /* MatchDay.swift in Sources */,
+				3F1E63FC22664890009096C4 /* ArticleTableViewCell.swift in Sources */,
 				87C21D14224D814C0094466F /* TeamRoot.swift in Sources */,
 				3F792BDB225D4535009CEFEF /* StandingsViewModel.swift in Sources */,
+				3F1E640322664E86009096C4 /* ArticleViewModel.swift in Sources */,
 				3FD7D32C224D417D00D8FD83 /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

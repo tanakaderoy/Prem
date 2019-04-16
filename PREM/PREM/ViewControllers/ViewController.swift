@@ -111,6 +111,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             print("\(match.homeTeam.name) \(match.score.fullTime.homeTeam ?? 999) vs \(match.score.fullTime.awayTeam ?? 999) \(match.awayTeam.name)")
             
             cell.homeTeamLabel.text = match.homeTeam.name
+            
             cell.awayTeamLabel.text = match.awayTeam.name
             if match.score.fullTime.awayTeam == nil {
                 cell.awayTeamScore.text = "N/A"
@@ -130,42 +131,28 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             let teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id )
             if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
                 
-                print("\(team.tla).svg")
+               
                 if let imagePath = Bundle.main.path(forResource: "\(team.tla)", ofType: "svg")
                 {
-                    print(imagePath)
+                    
                     let anSvgImage = SVGKImage(contentsOfFile: imagePath)
                      cell.homeTeamImage.image = anSvgImage?.uiImage
                 }
                
                
                 
-                print("team index: \(team.id)")
+                
                 
                 
                 
             }
             let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id )
             if let awayTeam = teamViewModel.teamAtIndex(awayTeamIndex ?? 999){
-                do {
-                    let urlString = "\(awayTeam.crestUrl)"
+                if let imagePath = Bundle.main.path(forResource: "\(awayTeam.tla)", ofType: "svg")
+                {
                     
-                    let url = URL(string: urlString)
-                    
-                    let data = try Data(contentsOf: url!)
-                    print("away team index \(String(describing: awayTeamIndex))")
-                    if awayTeam.id == 61{
-                        cell.awayTeamImage.image = UIImage(named:  "che.png")
-                    }else{
-                        
-                        let anSvgImage = SVGKImage(data: data)
-                        cell.awayTeamImage.image = anSvgImage?.uiImage
-                    }
-                    
-                    print("away team id \(awayTeam.id)")
-                }
-                catch{
-                    print(error)
+                    let anSvgImage = SVGKImage(contentsOfFile: imagePath)
+                    cell.awayTeamImage.image = anSvgImage?.uiImage
                 }
                 
             }

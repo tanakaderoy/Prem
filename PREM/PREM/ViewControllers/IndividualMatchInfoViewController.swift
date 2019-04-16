@@ -24,6 +24,12 @@ class IndividualMatchInfoViewController: UIViewController {
     @IBOutlet weak var awayTeamLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       
         if let id = id{
             matchInfoViewModel = MatchInfoViewModel(id: id)
             matchInfoViewModel.delegate = self
@@ -35,12 +41,6 @@ class IndividualMatchInfoViewController: UIViewController {
             
             
         }
-        
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-       
-        
     }
     func updateUI(){
         let match = matchInfoViewModel.matchInfo?.match
@@ -68,51 +68,24 @@ class IndividualMatchInfoViewController: UIViewController {
         venueLabel.text = match?.venue
         
         let teamIndex  = teamViewModel.getIndexOfTeamWithId(match?.homeTeam.id ?? 999 )
+        print(teamIndex)
         if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
-            let urlString = "\(team.crestUrl)"
-            
-            let url = URL(string: urlString)
-            let anSvgImage = SVGKImage(contentsOf: url)
-            homeTeamImageView.image = anSvgImage?.uiImage
-            
-            
-            //            do {
-            //                let urlString = "\(team.crestUrl)"
-            //
-            //                let url = URL(string: urlString)
-            //                let data = try Data(contentsOf: url!)
-            //                print("team index\(String(describing: teamIndex))")
-            //                let anSvgImage = SVGKImage(data: data)
-            //                homeTeamImageView.image = anSvgImage?.uiImage
-            //
-            //                //print("team index: \(team.id)")
-            //            }
-            //            catch{
-            //                print(error)
-            //            }
+            print(team.name)
+            if let imagePath = Bundle.main.path(forResource: "\(team.tla)", ofType: "svg")
+            {
+                
+                let anSvgImage = SVGKImage(contentsOfFile: imagePath)
+                homeTeamImageView.image = anSvgImage?.uiImage
+            }
             
         }
         let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match?.awayTeam.id ?? 999 )
         if let awayTeam = teamViewModel.teamAtIndex(awayTeamIndex ?? 999){
-            do {
-                let urlString = "\(awayTeam.crestUrl)"
+            if let imagePath = Bundle.main.path(forResource: "\(awayTeam.tla)", ofType: "svg")
+            {
                 
-                let url = URL(string: urlString)
-                
-                let data = try Data(contentsOf: url!)
-                
-                if awayTeam.id == 61{
-                    awayTeamImageView.image = UIImage(named:  "che.png")
-                }else{
-                    
-                    let anSvgImage = SVGKImage(data: data)
-                    awayTeamImageView.image = anSvgImage?.uiImage
-                }
-                
-                print("away team id \(awayTeamImageView.debugDescription)")
-            }
-            catch{
-                print(error)
+                let anSvgImage = SVGKImage(contentsOfFile: imagePath)
+                awayTeamImageView.image = anSvgImage?.uiImage
             }
         }
         
