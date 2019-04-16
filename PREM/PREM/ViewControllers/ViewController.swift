@@ -26,7 +26,9 @@ class ViewController: UIViewController {
         matchDayViewModel.reloadData()
         
         teamViewModel.reloadData()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         
+        view.addGestureRecognizer(tap)
         
         
         
@@ -36,20 +38,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    
+    
     @IBAction func goButtonTouched(_ sender: UIButton) {
-        matchDayViewModel.day = Int(selectedDay)
+        self.dismissKeyboard()
+        if(selectedDay.isEmpty){
+            if let matchDayTextFieldText = matchDayTextField.text{
+                matchDayViewModel.day = Int(matchDayTextFieldText)
+            }
+        }else{
+            matchDayViewModel.day = Int(selectedDay)
+            selectedDay = ""
+        }
         self.matchesUpdated()
         matchDayViewModel.reloadMatchDayData()
     }
     let days = [Int](1...38)
     var selectedDay: String = ""
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-        
-        
-    }
+    
     func createDayPicker(){
         let dayPicker = UIPickerView()
         dayPicker.delegate = self
@@ -131,15 +139,15 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
             let teamIndex  = teamViewModel.getIndexOfTeamWithId(match.homeTeam.id )
             if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
                 
-               
+                
                 if let imagePath = Bundle.main.path(forResource: "\(team.tla)", ofType: "svg")
                 {
                     
                     let anSvgImage = SVGKImage(contentsOfFile: imagePath)
-                     cell.homeTeamImage.image = anSvgImage?.uiImage
+                    cell.homeTeamImage.image = anSvgImage?.uiImage
                 }
-               
-               
+                
+                
                 
                 
                 
@@ -182,7 +190,18 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
 extension ViewController: MatchDayViewModelDelegate {
     func matchesUpdated() {
         print("\(self.matchDayViewModel.count)")
-        self.matchDayViewModel.day = Int(selectedDay)
+        if(selectedDay.isEmpty){
+            if let matchdayTextFieldText = matchDayTextField.text{
+                self.matchDayViewModel.day = Int(matchdayTextFieldText)
+                
+            }else{
+                self.matchDayViewModel.day = 38
+            }
+            
+        }else{
+            self.matchDayViewModel.day = Int(selectedDay)
+            self.selectedDay = ""
+        }
         self.tableView.reloadData()
     }
 }

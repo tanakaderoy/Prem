@@ -18,10 +18,21 @@ class MatchDay: Codable {
     let score: Score
     let homeTeam: HomeTeam
     let awayTeam: AwayTeam
+    let season: Season
+    
+    struct Season:Codable {
+        let id: Int
+        let currentMatchday: Int
+        enum CodingKeys: String, CodingKey{
+            case id
+            case currentMatchday
+        }
+    }
     
     enum CodingKeys: String, CodingKey {
         
         case id
+        case season
         case utcDate
         case status
         case matchday
@@ -29,7 +40,7 @@ class MatchDay: Codable {
         case homeTeam
         case awayTeam
     }
-
-
-  
+    
+    
+    
 }

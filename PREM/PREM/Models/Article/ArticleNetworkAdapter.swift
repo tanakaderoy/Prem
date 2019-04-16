@@ -15,7 +15,7 @@ class ArticleNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: ArticleNetworkAdapterDelegate?
     var article: [Article]?
     
-    private let endpoint =  "https://newsapi.org/v2/everything?q=premier league&apiKey=666cb178e61b4f0883f391ce50daf376&language=en&sortBy=popularity&sources=bbc-sport,talksport"
+    private let endpoint =  "https://newsapi.org/v2/everything?apiKey=666cb178e61b4f0883f391ce50daf376&language=en&sortBy=publishedAt&sources=bbc-sport,talksport,four-four-two&q=chelsea&pageSize=100"
     func fetchData() {
         article = [Article]()
         

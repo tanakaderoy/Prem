@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="fCL-Ix-P5D" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Matches" image="icons8-stadium-50" id="tOD-7d-i7V">
-                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bIo-vH-LVz">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -78,7 +78,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Videos" image="icons8-video-50" id="pEp-n7-myT">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="4"/>
                     </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggc-5s-oci" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -346,7 +346,7 @@
             <objects>
                 <navigationController id="1Eo-HO-gzY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" image="icons8-soccer-50" id="SEm-IM-d0i">
-                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qVd-cZ-Wx4">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -571,15 +571,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="181" id="AgW-2c-aDo" customClass="ArticleTableViewCell" customModule="PREM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="181"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="226" id="AgW-2c-aDo" customClass="ArticleTableViewCell" customModule="PREM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="226"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AgW-2c-aDo" id="6br-7i-b75">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="225.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQr-Vb-59G">
-                                            <rect key="frame" x="16" y="25.333333333333329" width="130" height="130"/>
+                                            <rect key="frame" x="16" y="48" width="130" height="130"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="2U1-28-H3n"/>
                                                 <constraint firstAttribute="width" secondItem="SQr-Vb-59G" secondAttribute="height" multiplier="1:1" id="RZu-W1-zve"/>
@@ -587,19 +587,19 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title !!! Title !!! Title !!! Title !!! Title !!! Title !!! Title !!! Title !!! Title !!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-0O-scR">
-                                            <rect key="frame" x="154" y="25.333333333333329" width="213" height="61"/>
+                                            <rect key="frame" x="154" y="48" width="213" height="61"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text texttext texttext texttext texttext texttext" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjs-4U-KOY">
-                                            <rect key="frame" x="154" y="94.333333333333329" width="213" height="35.999999999999986"/>
+                                            <rect key="frame" x="154" y="117" width="213" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N0-MS-InG">
-                                            <rect key="frame" x="315.33333333333331" y="153" width="43.666666666666686" height="17"/>
+                                            <rect key="frame" x="315.33333333333331" y="198" width="43.666666666666686" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -674,7 +674,9 @@
         <scene sceneID="TU6-KN-44k">
             <objects>
                 <navigationController id="AEz-C4-230" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="icons8-google-news-50" id="jae-tM-40i"/>
+                    <tabBarItem key="tabBarItem" title="News" image="icons8-google-news-50" id="jae-tM-40i">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iyR-Zp-3Nn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
