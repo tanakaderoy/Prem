@@ -68,7 +68,7 @@ class IndividualMatchInfoViewController: UIViewController {
         venueLabel.text = match?.venue
         
         let teamIndex  = teamViewModel.getIndexOfTeamWithId(match?.homeTeam.id ?? 999 )
-        print(teamIndex)
+        
         if let team = teamViewModel.teamAtIndex(teamIndex ?? 99){
             print(team.name)
             if let imagePath = Bundle.main.path(forResource: "\(team.tla)", ofType: "svg")

@@ -26,9 +26,7 @@ class ViewController: UIViewController {
         matchDayViewModel.reloadData()
         
         teamViewModel.reloadData()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         
-        view.addGestureRecognizer(tap)
         
         
         
@@ -38,6 +36,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     
     
