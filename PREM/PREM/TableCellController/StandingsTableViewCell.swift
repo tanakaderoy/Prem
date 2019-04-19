@@ -1,7 +1,7 @@
 //
 //  StandingsTableViewCell.swift
 //  PREM
-//
+//  
 //  Created by Student on 4/10/19.
 //  Copyright © 2019 Tanaka. All rights reserved.
 //
