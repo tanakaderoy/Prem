@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
 protocol VideoMatchNetworkAdapterDelegate {
     func videoMatchUpdated()
 }
+
 class VideoMatchNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: VideoMatchNetworkAdapterDelegate?
     var videoMatch: [VideoMatch]?
@@ -17,10 +19,9 @@ class VideoMatchNetworkAdapter: NSObject, URLSessionDelegate {
     private let endpoint =  URL(string: "https://www.scorebat.com/video-api/v1/")!
     
     func fetchData() {
+        
         videoMatch = [VideoMatch]()
         let session = URLSession.init(configuration: .default, delegate: self, delegateQueue: .main)
-        //var request = URLRequest(url: endpoint)
-        //request.setValue("ab93dfbf8a73486097b91ac7ba77c9f8", forHTTPHeaderField: "X-Auth-Token")
         
         let task = session.dataTask(with: endpoint){ (data, response, error)  in
             

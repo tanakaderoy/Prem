@@ -10,14 +10,26 @@ import UIKit
 import SVGKit
 
 class ViewController: UIViewController {
+    
     var matchDayViewModel: MatchDayViewModel!
     var teamViewModel: TeamViewModel!
+    private let refreshControl = UIRefreshControl()
+
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var matchDayLabel: UILabel!
     @IBOutlet weak var matchDayTextField: UITextField!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         createDayPicker()
         createToolbar()
         matchDayViewModel = MatchDayViewModel()
@@ -33,9 +45,17 @@ class ViewController: UIViewController {
         
         
         
-        // Do any additional setup after loading the view, typically from a nib.
+        refreshControl.addTarget(self, action: #selector(refreshMatches), for: .valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Matches...")
+        
+        // Do any additional setup after loading the view.
     }
     
+    @objc func refreshMatches(){
+        matchDayViewModel.reloadData()
+        teamViewModel.reloadData()
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -55,6 +75,8 @@ class ViewController: UIViewController {
         self.matchesUpdated()
         matchDayViewModel.reloadMatchDayData()
     }
+    
+    
     let days = [Int](1...38)
     var selectedDay: String = ""
     
@@ -65,6 +87,7 @@ class ViewController: UIViewController {
         matchDayTextField.inputView = dayPicker
         
     }
+    
     func createToolbar() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -74,6 +97,8 @@ class ViewController: UIViewController {
         toolBar.isUserInteractionEnabled = true
         matchDayTextField.inputAccessoryView = toolBar
     }
+    
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -82,6 +107,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -89,9 +115,13 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return days.count
     }
+    
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "MatchDay \(days[row])"
     }
+    
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedDay = "\(days[row])"
         matchDayTextField.text = selectedDay
@@ -116,8 +146,11 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         
         
         if let match = matchDayViewModel.matchAtIndex(indexPath.row){
+            
             matchDayLabel.text = "MatchDay: \(matchDayViewModel.day ?? matchDayViewModel.matchDayNumber)"
+            
             print("\(match.homeTeam.name) \(match.score.fullTime.homeTeam ?? 999) vs \(match.score.fullTime.awayTeam ?? 999) \(match.awayTeam.name)")
+            
             
             cell.homeTeamLabel.text = match.homeTeam.name
             
@@ -147,12 +180,6 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
                     let anSvgImage = SVGKImage(contentsOfFile: imagePath)
                     cell.homeTeamImage.image = anSvgImage?.uiImage
                 }
-                
-                
-                
-                
-                
-                
                 
             }
             let awayTeamIndex =  teamViewModel.getIndexOfTeamWithId(match.awayTeam.id )
@@ -186,20 +213,26 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     
     
     
-}//end class
+}
 
 extension ViewController: MatchDayViewModelDelegate {
+    
     func matchesUpdated() {
+        
         print("\(self.matchDayViewModel.count)")
         if(selectedDay.isEmpty){
+            
             if let matchdayTextFieldText = matchDayTextField.text{
+                
                 self.matchDayViewModel.day = Int(matchdayTextFieldText)
                 
             }else{
+                
                 self.matchDayViewModel.day = 38
             }
             
         }else{
+            
             self.matchDayViewModel.day = Int(selectedDay)
             self.selectedDay = ""
         }

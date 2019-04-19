@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
 protocol StandingsViewModelDelegate {
     func standingsUpdated()
 }
+
 class StandingsViewModel {
     var delegate: StandingsViewModelDelegate?
    var standings: [Result]?

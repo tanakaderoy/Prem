@@ -7,10 +7,13 @@
 //
 
 import Foundation
+
 protocol StandingsNetworkAdapterDelegate {
     func standingsUpdated()
 }
+
 class StandingsNetworkAdapter: NSObject, URLSessionDelegate {
+    
     var delegate: StandingsNetworkAdapterDelegate?
     var standing: [Result]?
     

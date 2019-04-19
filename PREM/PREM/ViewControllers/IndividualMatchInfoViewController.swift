@@ -24,12 +24,12 @@ class IndividualMatchInfoViewController: UIViewController {
     @IBOutlet weak var awayTeamLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-       
+        
         if let id = id{
             matchInfoViewModel = MatchInfoViewModel(id: id)
             matchInfoViewModel.delegate = self
@@ -48,9 +48,9 @@ class IndividualMatchInfoViewController: UIViewController {
         awayTeamLabel.text = match?.awayTeam.name
         
         if (match?.referees.count)! > 0 {
-        if let referee = match?.referees.first {
-            refereeLabel.text = referee.name
-        }
+            if let referee = match?.referees.first {
+                refereeLabel.text = referee.name
+            }
         }else{
             refereeLabel.text = "N/A"
         }
@@ -91,28 +91,13 @@ class IndividualMatchInfoViewController: UIViewController {
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+   
 }
 extension IndividualMatchInfoViewController: MatchInfoViewModelDelegate {
     func matchInfoUpdated() {
         
         print("\(String(describing: matchInfoViewModel.matchInfo))")
-        //print("matches updated: \(self.matchInfoViewModel.count)")
-        //print(self.matchInfoViewModel.homeTeamName)
-        //let matchIndex = matchInfoViewModel.getIndexOfMatchInfoWithId(id!)
-        //print("\(String(describing: matchIndex))")
-        //        if let singleMatch = matchInfoViewModel.matchInfoAtIndex(matchIndex ?? 999) {
-        //            homeTeamLabel.text = "\(singleMatch.match.homeTeam.name)"
-        //        }
+       
         DispatchQueue.main.async {
             self.updateUI()
         }

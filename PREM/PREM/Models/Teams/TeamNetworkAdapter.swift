@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
 protocol TeamNetworkAdapterDelegate {
     func teamsUpdated()
 }
+
 class TeamNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: TeamNetworkAdapterDelegate?
     var teams: [Teams]?

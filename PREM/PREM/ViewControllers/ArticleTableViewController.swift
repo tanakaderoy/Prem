@@ -14,24 +14,36 @@ class ArticleTableViewController: UITableViewController, ArticleViewModelDelegat
     }
     
     var articleViewModel: ArticleViewModel!
+    private let refresherControl = UIRefreshControl()
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl = refresherControl
+        } else {
+            self.tableView.addSubview(refresherControl)
+        }
+        
         articleViewModel = ArticleViewModel()
         articleViewModel.delegate = self
        
        articleViewModel.reloadData()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        refresherControl.addTarget(self, action: #selector(refreshArticles), for: .valueChanged)
+        refresherControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refresherControl.attributedTitle = NSAttributedString(string: "Fetching News...")
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    @objc func refreshArticles(){
+        articleViewModel.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
         if let vc = segue.destination as? NewsArticleViewController {
             
             if let row = tableView.indexPathForSelectedRow?.row {
@@ -43,7 +55,7 @@ class ArticleTableViewController: UITableViewController, ArticleViewModelDelegat
     }
   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //videoMatchUpdated()
+        
         
         if let articles = articleViewModel.article{
             return articles.count
@@ -66,18 +78,6 @@ class ArticleTableViewController: UITableViewController, ArticleViewModelDelegat
                 }
             }
         }
-        
-        
-        
-        
-        
-       
-        
-        
-        
-        
-        
-        
         
         return cell
     }

@@ -13,38 +13,43 @@ class StandingsViewController: UIViewController {
     
     var standingsViewModel: StandingsViewModel!
     var teamViewModel: TeamViewModel!
+    private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
         standingsViewModel = StandingsViewModel()
+        
         
         standingsViewModel.delegate = self
         teamViewModel = TeamViewModel()
         standingsViewModel.reloadData()
         teamViewModel.reloadData()
-        
+        refreshControl.addTarget(self, action: #selector(refreshStandingData), for: .valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Standings...")
+
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
+    
+    @objc func refreshStandingData(){
+        standingsViewModel.reloadData()
+        teamViewModel.reloadData()
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
 extension StandingsViewController: UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 20
@@ -73,29 +78,13 @@ extension StandingsViewController: UITableViewDelegate,UITableViewDataSource{
             }
         }
         
-        
-        
-        
-       
-        
-        
-        
-        
-        
         return cell
     }
-    
-    
-    
-    
-    
-    
-    
     
 }
 extension StandingsViewController: StandingsViewModelDelegate {
     func standingsUpdated() {
-        //let group = self.standingsViewModel.standingsAtIndex(0)?.standings
+       
         print("delegate reached)")
         self.tableView.reloadData()
     }

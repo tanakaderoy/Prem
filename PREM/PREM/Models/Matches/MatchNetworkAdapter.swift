@@ -26,11 +26,7 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
 
     
     
-//    private let url = "https://api.football-data.org/v2/competitions/2021/matches?matchday=%d"
-//    private var matchDayEndpoint: URL? {
-//        return  URL(string: String(format: url, day ?? 32))
-//    }
-    
+
     func fetchData() {
         
         matches = [MatchDay]()
@@ -56,10 +52,10 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
                 
                 let jsonDecoder = JSONDecoder()
                 do{
-                    let matchesPage = try jsonDecoder.decode(Root.self, from: data)
-                    if matchesPage.matches.count > 0{
+                    let matchesRoot = try jsonDecoder.decode(Root.self, from: data)
+                    if matchesRoot.matches.count > 0{
                         
-                        self.matches?.append(contentsOf: matchesPage.matches)
+                        self.matches?.append(contentsOf: matchesRoot.matches)
                         self.delegate?.matchesUpdated()
                     }
                     
@@ -76,10 +72,7 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
     }
     func fetchDataWithMatchDay(day: Int){
         
-        //    private let url = "https://api.football-data.org/v2/competitions/2021/matches?matchday=%d"
-        //    private var matchDayEndpoint: URL? {
-        //        return  URL(string: String(format: url, day ?? 32))
-        //    }
+       
         
         let url = URL(string: "https://api.football-data.org/v2/competitions/2021/matches?")!
         let queryItems = [URLQueryItem(name: "matchday", value: "\(day)"),
@@ -109,10 +102,10 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
                 
                 let jsonDecoder = JSONDecoder()
                 do{
-                    let matchesPage = try jsonDecoder.decode(Root.self, from: data)
-                    if matchesPage.matches.count > 0{
+                    let matchesRoot = try jsonDecoder.decode(Root.self, from: data)
+                    if matchesRoot.matches.count > 0{
                         
-                        self.matches?.append(contentsOf: matchesPage.matches)
+                        self.matches?.append(contentsOf: matchesRoot.matches)
                         self.delegate?.matchesUpdated()
                     }
                     

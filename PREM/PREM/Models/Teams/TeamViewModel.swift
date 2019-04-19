@@ -7,20 +7,21 @@
 //
 
 import Foundation
+
 protocol TeamViewModelDelegate {
     func teamsUpdated()
 }
+
 class TeamViewModel {
     var delegate: TeamViewModelDelegate?
     private var teams: [Teams]?
     private var teamNetworkAdapter: TeamNetworkAdapter!
+    
     init(){
         teamNetworkAdapter = TeamNetworkAdapter()
         teamNetworkAdapter.delegate = self
     }
-    var count: Int{
-        return teams?.count != nil ? teams!.count: 10
-    }
+    
     func reloadData() {
         teamNetworkAdapter.fetchData()
     }
