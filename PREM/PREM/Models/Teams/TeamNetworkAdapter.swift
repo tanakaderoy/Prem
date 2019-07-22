@@ -16,7 +16,7 @@ class TeamNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: TeamNetworkAdapterDelegate?
     var teams: [Teams]?
     
-    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/teams")!
+    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/teams?season=2018")!
     
     func fetchData() {
         teams = [Teams]()

@@ -22,7 +22,8 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
     var matches: [MatchDay]?
     var day: Int?
     
-    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/matches")
+    
+    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/matches?season=2018")
 
     
     
@@ -75,8 +76,7 @@ class MatchNetworkAdapter: NSObject, URLSessionDelegate {
        
         
         let url = URL(string: "https://api.football-data.org/v2/competitions/2021/matches?")!
-        let queryItems = [URLQueryItem(name: "matchday", value: "\(day)"),
-                          ]
+        let queryItems = [URLQueryItem(name: "matchday", value: "\(day)"),URLQueryItem(name: "season", value: "2018")                  ]
         let newUrl = url.appending(queryItems)!
         
         matches = [MatchDay]()

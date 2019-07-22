@@ -20,7 +20,7 @@ class MatchInfoNetworkAdapter: NSObject, URLSessionDelegate {
         self.id = id
     }
     
-    var url = "https://api.football-data.org/v2/matches/%d"
+    var url = "https://api.football-data.org/v2/matches/%d?season=2018"
     
     private var endpoint: URL? {
         return  URL(string: String(format: url, self.id))

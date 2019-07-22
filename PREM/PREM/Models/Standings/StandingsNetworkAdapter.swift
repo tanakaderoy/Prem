@@ -17,7 +17,7 @@ class StandingsNetworkAdapter: NSObject, URLSessionDelegate {
     var delegate: StandingsNetworkAdapterDelegate?
     var standing: [Result]?
     
-    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/standings")!
+    private let endpoint =  URL(string: "https://api.football-data.org/v2/competitions/2021/standings?season=2018")!
     
     func fetchData() {
         standing = [Result]()
